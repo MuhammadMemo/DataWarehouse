@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="DimCompany.sql" />
+    <Build Include="DimDate.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataWarehouse.publish.xml" />
