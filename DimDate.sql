@@ -4,7 +4,7 @@
 --Fact Sheard:FactSales,FactInventory,FactFinance,FactPurchase,FactProductions ,FactSalary,FactAttendance ,FactCar
 CREATE tABLE [dbo].[DimDate]
 (
-DateKey [int] NOT NULL,
+DateKey [int] NOT NULL PRIMARY kEY,
 Date datetime NULL,
 FullDate char(10) NULL,
 DayOfMonth varchar(2) NULL,
@@ -32,6 +32,7 @@ LastDayOfMonth date NULL,
 FirstDayOfQuarter date NULL,
 LastDayOfQuarter date NULL,
 FirstDayOfYear date NULL,
-LastDayOfYear date NULL
+LastDayOfYear date
 )
-
+GO
+CREATE INDEX [IX_DimDate_DateKey] ON [dbo].[DimDate] (DateKey)
