@@ -20,7 +20,7 @@ WeekOfQuarter varchar(2) NULL,
 WeekOfYear varchar(2) NULL,
 Month varchar(2) NULL,
 MonthName varchar(9) NULL,
-MonthOfQuarter varchar(2) NULL,
+MonthOfQuarter varchar(2) NULL ,
 Quarter char(1) NULL,
 QuarterName varchar(9) NULL,
 Year char(4) NULL,
@@ -32,7 +32,7 @@ LastDayOfMonth date NULL,
 FirstDayOfQuarter date NULL,
 LastDayOfQuarter date NULL,
 FirstDayOfYear date NULL,
-LastDayOfYear date
+LastDayOfYear date NULL
 )
 WITH(DATA_COMPRESSION = PAGE)
 GO

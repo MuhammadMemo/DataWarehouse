@@ -10,4 +10,4 @@ CREATE TABLE [dbo].[DimCompany]
 WITH(DATA_COMPRESSION = PAGE)
 GO
 
-CREATE INDEX [IX_DimCompany_Column] ON [dbo].[DimCompany] (Companyid)
+CREATE INDEX [IX_DimCompany_Column] ON [dbo].[DimCompany] (CompanyId)
