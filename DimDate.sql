@@ -34,5 +34,6 @@ LastDayOfQuarter date NULL,
 FirstDayOfYear date NULL,
 LastDayOfYear date
 )
+WITH(DATA_COMPRESSION = PAGE)
 GO
 CREATE INDEX [IX_DimDate_DateKey] ON [dbo].[DimDate] (DateKey)

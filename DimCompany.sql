@@ -4,9 +4,10 @@
 
 CREATE TABLE [dbo].[DimCompany]
 (
-	Companyid tinyint NOT NULL PRIMARY KEY,
+	CompanyId tinyint NOT NULL PRIMARY KEY,
 	CompanyName   nvarchar(10) NOT NULL 
 )
+WITH(DATA_COMPRESSION = PAGE)
 GO
 
 CREATE INDEX [IX_DimCompany_Column] ON [dbo].[DimCompany] (Companyid)
