@@ -32,7 +32,9 @@ LastDayOfMonth date NULL,
 FirstDayOfQuarter date NULL,
 LastDayOfQuarter date NULL,
 FirstDayOfYear date NULL,
-LastDayOfYear date NULL
+LastDayOfYear date NULL,
+Season nvarchar(50) Null,
+Semester nvarchar(50) Null
 )
 WITH(DATA_COMPRESSION = PAGE)
 GO
