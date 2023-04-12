@@ -38,4 +38,4 @@ Semester nvarchar(50) Null
 )
 WITH(DATA_COMPRESSION = PAGE)
 GO
-CREATE INDEX [IX_DimDate_DateKey] ON [dbo].[DimDate] (DateKey)
+CREATE INDEX [IX_DimDate_DateKey] ON [dbo].[DimDate] ([DateKey])
