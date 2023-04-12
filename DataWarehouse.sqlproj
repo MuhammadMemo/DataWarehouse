@@ -63,6 +63,7 @@
     <Build Include="Tables\DimCompany.sql" />
     <Build Include="Tables\DimDate.sql" />
     <Build Include="Tables\DimTime.sql" />
+    <Build Include="Tables\DimBranche.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataWarehouse.publish.xml" />

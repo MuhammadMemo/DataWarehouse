@@ -1,7 +1,7 @@
-﻿
--- DimCompany (Type:Static ,Loading:Initial Only)
--- Three Company (Mfco-MT-ME-DAT:test)
-
+﻿/*
+DimCompany (Type:Static ,Loading:Initial Only)
+Three Company (Mfco-MT-ME-DAT:test)
+*/
 CREATE TABLE [dbo].[DimCompany]
 (
 	CompanyId tinyint NOT NULL PRIMARY KEY,
