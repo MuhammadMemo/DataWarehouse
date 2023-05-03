@@ -5,9 +5,9 @@ Fact Sheard:FactSales
  */
 
 CREATE TABLE [dbo].[DimBranche](
-	BrancheKey int NOT NULL,
-	BrancheAlternativeKey tinyint NOT NULL,
-	BrancheName nvarchar(10) NOT NULL,
+	BrancheKey  TINYINT NOT NULL IDENTITY ,
+	BrancheAlternativeKey nvarchar(30) NOT NULL,
+	BrancheName nvarchar(20) NOT NULL,
 	CompanyID tinyint NOT NULL,
  CONSTRAINT [PK_DimBranc_1] PRIMARY KEY CLUSTERED 
 (

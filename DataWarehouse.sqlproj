@@ -58,14 +58,18 @@
     <Folder Include="Properties" />
     <Folder Include="Scripts\" />
     <Folder Include="Tables" />
+    <Folder Include="Script" />
+    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\DimCompany.sql" />
-    <Build Include="Tables\DimDate.sql" />
     <Build Include="Tables\DimTime.sql" />
-    <Build Include="Tables\DimBranche.sql" />
+    <Build Include="Tables\FactSales.sql" />
+    <Build Include="Tables\DimDate.sql" />
+    <Build Include="Tables\DimProduct.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataWarehouse.publish.xml" />
+    <None Include="Script1.sql" />
   </ItemGroup>
 </Project>
