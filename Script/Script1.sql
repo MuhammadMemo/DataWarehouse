@@ -6,7 +6,7 @@ go
 INSERT INTO [dbo].[DimCompany]
            ([CompanyAlternativeKey]
            ,[CompanyName])
-     VALUES
-           ('1','Mffco')
+     VALUES ('1','Mffco')
+           
 
 GO

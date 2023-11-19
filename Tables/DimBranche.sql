@@ -1,22 +1,14 @@
 ﻿
-/*
-DimBranche (Type:Conformed ,Loading:Every Hour)
-Fact Sheard:FactSales 
- */
-
 CREATE TABLE [dbo].[DimBranche](
-	BrancheKey  TINYINT NOT NULL IDENTITY ,
-	BrancheAlternativeKey nvarchar(30) NOT NULL,
-	BrancheName nvarchar(20) NOT NULL,
-	CompanyID tinyint NOT NULL,
- CONSTRAINT [PK_DimBranc_1] PRIMARY KEY CLUSTERED 
+	[BrancheKey] [int] NOT NULL,
+	[BrancheAlternativeKey] [nvarchar](100) NOT NULL,
+	[BrancheName] [nvarchar](150) NOT NULL,
+	[CompanyID] [tinyint] NOT NULL,
+	[IsDeleted] [bit] NOT NULL,
+	[UpdatLasteTime] [datetime] NOT NULL,
+ CONSTRAINT [PK_DimBranche] PRIMARY KEY CLUSTERED 
 (
-	BrancheKey ASC,
-	CompanyID ASC
-
-)
-WITH (DATA_COMPRESSION = PAGE) ON [PRIMARY]
+	[BrancheKey] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-
-
