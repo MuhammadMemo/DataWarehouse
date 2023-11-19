@@ -72,6 +72,13 @@
     <None Include="Script\DimDateValue.sql" />
     <Build Include="Tables\DimCustomers.sql" />
     <Build Include="Tables\LogTable.sql" />
+    <Build Include="Tables\DimRegion.sql" />
+    <Build Include="Tables\DimVendors.sql" />
+    <Build Include="Tables\DimPromotion.sql" />
+    <Build Include="Tables\DimSalesStatus.sql" />
+    <Build Include="Tables\DimDimension.sql" />
+    <Build Include="Tables\DimUnit.sql" />
+    <Build Include="Tables\DimEmployee.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataWarehouse.publish.xml" />

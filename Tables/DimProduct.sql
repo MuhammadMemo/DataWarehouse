@@ -3,7 +3,7 @@ CREATE TABLE [dbo].[DimProduct]
 (
 	--DimProducts (Type:Conformed ,Loading:Every Hour,SCD)
 CompanyKey tinyint not null,
-ProductsKey [int] Not null IDENTITY  ,
+ProductsKey [int] Not null IDENTITY (1,1) ,
 ProductsAlternativeKey nvarchar(50)Not null,
 ProductName nvarchar(150)Not null,
 Category nvarchar(20)Not null,
