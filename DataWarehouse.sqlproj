@@ -79,6 +79,8 @@
     <Build Include="Tables\DimDimension.sql" />
     <Build Include="Tables\DimUnit.sql" />
     <Build Include="Tables\DimEmployee.sql" />
+    <Build Include="Tables\DimCars.sql" />
+    <Build Include="Tables\DimDepartments.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataWarehouse.publish.xml" />
