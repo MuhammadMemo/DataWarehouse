@@ -7,8 +7,6 @@
 	ColorName nvarchar(30),
 	SizeName nvarchar(30) ,
 	ConfigrationName  nvarchar(30),
-
-	Onhand int,
 	
 	UpdatLasteTime datetime NOT NULL,
 	CONSTRAINT [PK_DimDimension] PRIMARY KEY CLUSTERED 
