@@ -79,7 +79,7 @@
     <Build Include="Tables\DimDimension.sql" />
     <Build Include="Tables\DimUnit.sql" />
     <Build Include="Tables\DimEmployee.sql" />
-    <Build Include="Tables\DimCars.sql" />
+    <Build Include="Tables\DimCar.sql" />
     <Build Include="Tables\DimDepartment.sql" />
     <Build Include="Tables\FactSalary.sql" />
     <Build Include="Tables\FactInventory.sql" />
