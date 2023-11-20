@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[DimVendors]
+﻿CREATE TABLE [dbo].[DimVendor]
 (
 	VendorKey  [int] identity (1,1) ,
 	VendorAlternativeKey nvarchar(50) NOT NULL,

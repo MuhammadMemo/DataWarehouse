@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[DimDepartments]
+﻿CREATE TABLE [dbo].[DimDepartment]
 (
 	DepartmentKey int identity (1,1),
 	DepartmentAlternativeKey nvarchar(30)NOT NULL,
