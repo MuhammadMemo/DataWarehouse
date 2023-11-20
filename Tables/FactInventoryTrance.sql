@@ -14,7 +14,7 @@ CREATE TABLE [dbo].[FactInventoryTrance]
 	TransTypeKey tinyint NOT NULL,
 
 	--Degenerate Dim :
-	INVENTTRANSID nvarchar(20) NOT NULL,
+	InventTranceKey nvarchar(20) NOT NULL,
 	TransRefkey  nvarchar(10) NOT NULL,
 	DateFinancial date NOT NULL,
 	DatePhysical date NOT NULL,
@@ -24,5 +24,5 @@ CREATE TABLE [dbo].[FactInventoryTrance]
 	IsDeleted bit DEFAULT 0 NOT NULL,
 	LastupdateDate datetime DEFAULT getDate()
 
- CONSTRAINT [PK_FactInventory] PRIMARY KEY (CompanyKey,INVENTTRANSID,DimensionKey,ID) NOT NULL
+ CONSTRAINT [PK_FactInventory] PRIMARY KEY (CompanyKey,InventTranceKey,DimensionKey,ID) NOT NULL
  )

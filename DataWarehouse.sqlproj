@@ -56,7 +56,6 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="Scripts\" />
     <Folder Include="Tables" />
     <Folder Include="Script" />
   </ItemGroup>
@@ -80,7 +79,6 @@
     <Build Include="Tables\DimUnit.sql" />
     <Build Include="Tables\DimEmployee.sql" />
     <Build Include="Tables\DimCar.sql" />
-    <Build Include="Tables\DimDepartment.sql" />
     <Build Include="Tables\FactSalary.sql" />
     <Build Include="Tables\FactInventoryTrance.sql" />
     <Build Include="Tables\DimStatusIssue.sql" />

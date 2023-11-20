@@ -5,7 +5,7 @@
 */
 CREATE tABLE [dbo].[DimDate]
 (
- DateKey [int] NOT NULL PRIMARY kEY,
+    DateKey int NOT NULL PRIMARY kEY,
 	Date datetime NULL,
 	FullDate char(10) NULL,
 	DayOfMonth varchar(2) NULL,
