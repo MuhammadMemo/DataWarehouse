@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[DimEmployee]
 (
-	EmployeeKey [int] identity (1,1),
+	EmployeeKey int identity (1,1),
 	EmployeeAlternativeKey nvarchar(10) NOT NULL,
 	EmployeeName nvarchar(50) NOT NULL,
 	Birthdate Date,

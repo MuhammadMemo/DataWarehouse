@@ -81,6 +81,12 @@
     <Build Include="Tables\DimEmployee.sql" />
     <Build Include="Tables\DimCars.sql" />
     <Build Include="Tables\DimDepartments.sql" />
+    <Build Include="Tables\FactSalary.sql" />
+    <Build Include="Tables\FactInventory.sql" />
+    <Build Include="Tables\Function1.sql" />
+    <Build Include="Tables\DimStatusIssue.sql" />
+    <Build Include="Tables\DimStatusReceipt.sql" />
+    <Build Include="Tables\DimTransType.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataWarehouse.publish.xml" />
