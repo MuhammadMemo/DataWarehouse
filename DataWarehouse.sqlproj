@@ -70,7 +70,7 @@
     <Build Include="Script\CREATE DATABASE [DataWarehouse].sql" />
     <None Include="Script\Script1.sql" />
     <None Include="Script\DimDateValue.sql" />
-    <Build Include="Tables\DimCustomers.sql" />
+    <Build Include="Tables\DimCustomer.sql" />
     <Build Include="Tables\LogTable.sql" />
     <Build Include="Tables\DimRegion.sql" />
     <Build Include="Tables\DimVendors.sql" />
@@ -83,10 +83,10 @@
     <Build Include="Tables\DimDepartments.sql" />
     <Build Include="Tables\FactSalary.sql" />
     <Build Include="Tables\FactInventory.sql" />
-    <Build Include="Tables\Function1.sql" />
     <Build Include="Tables\DimStatusIssue.sql" />
     <Build Include="Tables\DimStatusReceipt.sql" />
     <Build Include="Tables\DimTransType.sql" />
+    <Build Include="Tables\DimSalesType.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataWarehouse.publish.xml" />
