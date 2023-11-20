@@ -1,19 +1,20 @@
 ﻿--FactInventory : (Type:Transaction,Loading:Every Day, Granularity:Product,Daily:DatePhysical)
-CREATE TABLE [dbo].[FactInventory]
+CREATE TABLE [dbo].[FactInventoryTrance]
 (
+	ID   bigint identity (1,1)   ,
 --Foreign Keys :
-	Id INT NOT NULL  identity (1,1),
 	CompanyKey tinyint not null,
 	DateFinancialAlternativeKey nvarchar(10) NOT NULL,
 	DatePhysicalAlternativeKey nvarchar(10) NOT NULL,
 	ProductsKey  nvarchar(50) NOT NULL,
-	inventDimKey nvarchar(50) NOT NULL,
+	DimensionKey nvarchar(50) NOT NULL,
 
 	StatusIssueKey tinyint NOT NULL,
 	StatusReceiptKey tinyint NOT NULL,
 	TransTypeKey tinyint NOT NULL,
 
 	--Degenerate Dim :
+	INVENTTRANSID nvarchar(20) NOT NULL,
 	TransRefkey  nvarchar(10) NOT NULL,
 	DateFinancial date NOT NULL,
 	DatePhysical date NOT NULL,
@@ -23,5 +24,5 @@ CREATE TABLE [dbo].[FactInventory]
 	IsDeleted bit DEFAULT 0 NOT NULL,
 	LastupdateDate datetime DEFAULT getDate()
 
- CONSTRAINT [PK_FactInventory] PRIMARY KEY (CompanyKey,TransRefkey,ProductsKey,inventDimKey) NOT NULL
+ CONSTRAINT [PK_FactInventory] PRIMARY KEY (CompanyKey,INVENTTRANSID,DimensionKey,ID) NOT NULL
  )

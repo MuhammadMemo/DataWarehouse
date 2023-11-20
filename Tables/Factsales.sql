@@ -19,6 +19,7 @@ StatusKey  tinyint FOREIGN KEY  REFERENCES DimSalesStatus(StatusKey) not null,
 TypeKey  tinyint FOREIGN KEY  REFERENCES DimSalesType(TypeKey) not null,
 
 --Degenerate Dim :
+INVENTTRANSID nvarchar(20) NOT NULL,
 SalesOrderNumber nvarchar(20) NOT NULL,
 SalesOrderLineNumber BIGINT NOT NULL,
 OrderDate Date,
@@ -33,7 +34,8 @@ LineAmount NUMERIC(28, 12) NOT NULL,
 TaxAmount NUMERIC(28, 12) NOT NULL, 
 IsDeleted bit DEFAULT 0 NOT NULL,
 LastupdateDate datetime DEFAULT getDate()
-    CONSTRAINT [PK_Factsales] PRIMARY KEY (CompanyKey,SalesOrderNumber,SalesOrderLineNumber,ProductKey) ,
+    CONSTRAINT [PK_Factsales] PRIMARY KEY (CompanyKey,INVENTTRANSID) ,
+
     CONSTRAINT [PF_Branche] FOREIGN KEY  (BrancheKey,CompanyKey) REFERENCES DimBranche(BrancheKey,CompanyKey),
     CONSTRAINT [PF_Product] FOREIGN KEY  (ProductKey,CompanyKey) REFERENCES DimProduct(ProductKey,CompanyKey),
     CONSTRAINT [PF_Region] FOREIGN KEY  (RegionKey,CompanyKey) REFERENCES DimRegion(RegionKey,CompanyKey),

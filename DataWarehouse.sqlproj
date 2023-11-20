@@ -82,11 +82,12 @@
     <Build Include="Tables\DimCar.sql" />
     <Build Include="Tables\DimDepartment.sql" />
     <Build Include="Tables\FactSalary.sql" />
-    <Build Include="Tables\FactInventory.sql" />
+    <Build Include="Tables\FactInventoryTrance.sql" />
     <Build Include="Tables\DimStatusIssue.sql" />
     <Build Include="Tables\DimStatusReceipt.sql" />
     <Build Include="Tables\DimTransType.sql" />
     <Build Include="Tables\DimSalesType.sql" />
+    <Build Include="Tables\FactInventOnHand.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataWarehouse.publish.xml" />

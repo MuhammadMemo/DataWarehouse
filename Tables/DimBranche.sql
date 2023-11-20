@@ -1,6 +1,6 @@
 ﻿
 CREATE TABLE [dbo].[DimBranche](
-	BrancheKey tinyint NOT NULL,
+	BrancheKey tinyint identity (1,1) NOT NULL,
 	BrancheAlternativeKey nvarchar(100) NOT NULL,
 	BrancheName nvarchar(150) NOT NULL,
 	CompanyKey tinyint NOT NULL,
