@@ -2,13 +2,21 @@
 CREATE TABLE [dbo].[FactSalary]
 (
 	Id INT NOT NULL identity (1,1),
-	CompanyKey int not null,
+	--Foreign Keys :
+	CompanyKey tinyint not null,
 	EmployeeKey  int not null,
 	SalaryDateAlternativeKey  int not null,
-
-	SalaryDateKey  date not null,
-
-
 	
+	--Degenerate Dim :
+	SalaryDate  date not null,
+
+	--Measures :
+
+
+	LastupdateDate datetime DEFAULT getDate(),
+
+    CONSTRAINT [PK_FactSalary] PRIMARY KEY (CompanyKey,id) ,
+	CONSTRAINT [PF_EmployeeSalary] FOREIGN KEY  (EmployeeKey,CompanyKey) REFERENCES DimEmployee(EmployeeKey,CompanyKey),
+	CONSTRAINT [PF_SalaryDate] FOREIGN KEY  (SalaryDateAlternativeKey) REFERENCES DimDate(DateKey),
 
 )

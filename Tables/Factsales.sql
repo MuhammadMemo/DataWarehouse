@@ -1,5 +1,6 @@
 ﻿CREATE TABLE [dbo].[FactSales]
 (
+--PRIMARY Key :
 InventTranceKey nvarchar(20) NOT NULL,
 --Foreign Keys :
 CompanyKey tinyint  not null,
@@ -14,7 +15,6 @@ EmployeeKey  int  not null,
 StatusKey  tinyint  not null,
 TypeKey  tinyint not null,
 CarKey  smallint not null,
-
 OrderDateAlternativeKey  int  not null,
 ProductionDateAlternativeKey  int  not null,
 ShippingDateAlternativeKey int  not null,
@@ -33,9 +33,10 @@ DiscountPercent NUMERIC(28, 12) NOT NULL,
 DiscountAmount money,
 LineAmount NUMERIC(28, 12) NOT NULL,
 TaxAmount NUMERIC(28, 12) NOT NULL, 
+--Trace
 IsDeleted bit DEFAULT 0 NOT NULL,
 LastupdateDate datetime DEFAULT getDate()
-    CONSTRAINT [PK_Factsales] PRIMARY KEY (CompanyKey,InventTranceKey) ,
+    CONSTRAINT [PK_FactSales] PRIMARY KEY (CompanyKey,InventTranceKey) ,
     
     CONSTRAINT [PF_Branche] FOREIGN KEY  (BrancheKey,CompanyKey) REFERENCES DimBranche(BrancheKey,CompanyKey),
     CONSTRAINT [PF_Product] FOREIGN KEY  (ProductKey,CompanyKey) REFERENCES DimProduct(ProductKey,CompanyKey),

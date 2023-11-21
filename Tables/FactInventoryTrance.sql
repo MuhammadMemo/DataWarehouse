@@ -4,10 +4,11 @@ CREATE TABLE [dbo].[FactInventoryTrance]
 	ID   bigint identity (1,1)   ,
 --Foreign Keys :
 	CompanyKey tinyint not null,
-	DateFinancialAlternativeKey nvarchar(10) NOT NULL,
-	DatePhysicalAlternativeKey nvarchar(10) NOT NULL,
-	ProductsKey  nvarchar(50) NOT NULL,
-	DimensionKey nvarchar(50) NOT NULL,
+	FinancialDateAlternativeKey int NOT NULL,
+	PhysicalDateAlternativeKey int NOT NULL,
+	ProductKey  int NOT NULL,
+	DimensionKey int NOT NULL,
+	UnitKey int NOT NULL,
 
 	StatusIssueKey tinyint NOT NULL,
 	StatusReceiptKey tinyint NOT NULL,
@@ -24,5 +25,16 @@ CREATE TABLE [dbo].[FactInventoryTrance]
 	IsDeleted bit DEFAULT 0 NOT NULL,
 	LastupdateDate datetime DEFAULT getDate()
 
- CONSTRAINT [PK_FactInventory] PRIMARY KEY (CompanyKey,InventTranceKey,DimensionKey,ID) NOT NULL
+ CONSTRAINT [PK_FactInventory] PRIMARY KEY (CompanyKey,InventTranceKey,DimensionKey,ID) NOT NULL,
+ 
+    CONSTRAINT [PF_InvProduct] FOREIGN KEY  (ProductKey,CompanyKey) REFERENCES DimProduct(ProductKey,CompanyKey),
+    CONSTRAINT [PF_InvDimension] FOREIGN KEY  (DimensionKey,CompanyKey) REFERENCES DimDimension(DimensionKey,CompanyKey),
+    CONSTRAINT [PF_InvUnit] FOREIGN KEY  (UnitKey,CompanyKey) REFERENCES DimUnit(UnitKey,CompanyKey),
+    CONSTRAINT [PF_InvStatusIssue] FOREIGN KEY (StatusIssueKey) REFERENCES DimStatusIssue(StatusIssueKey),
+	CONSTRAINT [PF_InvStatusReceipt] FOREIGN KEY (StatusReceiptKey) REFERENCES DimStatusReceipt(StatusReceiptKey),
+	CONSTRAINT [PF_InvTransType] FOREIGN KEY (TransTypeKey) REFERENCES DimTransType(TransTypeKey),
+    CONSTRAINT [PF_InvCompany] FOREIGN KEY (CompanyKey) REFERENCES DimCompany(CompanyKey),
+    CONSTRAINT [PF_InvFinancialDate] FOREIGN KEY (FinancialDateAlternativeKey) REFERENCES DimDate(DateKey),
+    CONSTRAINT [PF_InvProductionDate] FOREIGN KEY (PhysicalDateAlternativeKey) REFERENCES DimDate(DateKey),
+
  )

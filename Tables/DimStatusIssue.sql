@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[DimStatusIssue]
 (
-	[Id] INT NOT NULL identity (1,1) PRIMARY KEY,
-	StatusIssue nvarchar(50) Not null
+	StatusIssueKey tinyint NOT NULL identity (1,1) PRIMARY KEY,
+	StatusIssueName nvarchar(50) Not null
 )
