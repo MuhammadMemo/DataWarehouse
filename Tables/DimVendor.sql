@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[DimVendor]
 (
 	CompanyKey tinyint NOT NULL,
-	VendorKey  [int] identity (1,1) ,
+	VendorKey  int identity (1,1) ,
 	VendorAlternativeKey nvarchar(50) NOT NULL,
 	VendorName nvarchar(60) NOT NULL,
 	VendorGroup nvarchar(30) NOT NULL,

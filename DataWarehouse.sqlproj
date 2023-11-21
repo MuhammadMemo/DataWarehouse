@@ -88,6 +88,8 @@
     <Build Include="Tables\DimSalesType.sql" />
     <Build Include="Tables\FactInventOnHand.sql" />
     <Build Include="Script\Procedure1.sql" />
+    <Build Include="Tables\FactFinance.sql" />
+    <Build Include="Tables\DimAccount.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataWarehouse.publish.xml" />
