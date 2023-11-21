@@ -4,6 +4,7 @@
 	UnitKey  int  IDENTITY (1,1) ,
 	UnitAlternativeKey  int not null ,
 	UnitName nvarchar(30) not null ,
+	UpdatLasteTime datetime NOT NULL,
 	
 
 CONSTRAINT [PK_DimUnit_1] PRIMARY KEY CLUSTERED 
