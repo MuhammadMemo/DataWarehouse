@@ -84,12 +84,13 @@
     <Build Include="Tables\FactInventoryTrance.sql" />
     <Build Include="Tables\DimStatusIssue.sql" />
     <Build Include="Tables\DimStatusReceipt.sql" />
-    <Build Include="Tables\DimTransType.sql" />
+    <Build Include="Tables\DimInventTransType.sql" />
     <Build Include="Tables\DimSalesType.sql" />
     <Build Include="Tables\FactInventOnHand.sql" />
     <Build Include="Script\Procedure1.sql" />
     <Build Include="Tables\FactFinance.sql" />
     <Build Include="Tables\DimAccount.sql" />
+    <Build Include="Tables\DimFinTransType.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataWarehouse.publish.xml" />

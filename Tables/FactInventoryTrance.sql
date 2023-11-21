@@ -32,7 +32,7 @@ CREATE TABLE [dbo].[FactInventoryTrance]
     CONSTRAINT [PF_InvUnit] FOREIGN KEY  (UnitKey,CompanyKey) REFERENCES DimUnit(UnitKey,CompanyKey),
     CONSTRAINT [PF_InvStatusIssue] FOREIGN KEY (StatusIssueKey) REFERENCES DimStatusIssue(StatusIssueKey),
 	CONSTRAINT [PF_InvStatusReceipt] FOREIGN KEY (StatusReceiptKey) REFERENCES DimStatusReceipt(StatusReceiptKey),
-	CONSTRAINT [PF_InvTransType] FOREIGN KEY (TransTypeKey) REFERENCES DimTransType(TransTypeKey),
+	CONSTRAINT [PF_InvTransType] FOREIGN KEY (TransTypeKey) REFERENCES DimInventTransType(TransTypeKey),
     CONSTRAINT [PF_InvCompany] FOREIGN KEY (CompanyKey) REFERENCES DimCompany(CompanyKey),
     CONSTRAINT [PF_InvFinancialDate] FOREIGN KEY (FinancialDateAlternativeKey) REFERENCES DimDate(DateKey),
     CONSTRAINT [PF_InvProductionDate] FOREIGN KEY (PhysicalDateAlternativeKey) REFERENCES DimDate(DateKey),
