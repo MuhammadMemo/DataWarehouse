@@ -10,7 +10,7 @@
 	Hiredate Date,
 	Insurancedate Date,
 	WorkeStatus nvarchar(20) NOT NULL,
-	UpdatLasteTime datetime NOT NULL,
+	UpdatLasteTime datetime default getdate(),
 
 CONSTRAINT [PK_DimEmployee_1] PRIMARY KEY CLUSTERED 
 (

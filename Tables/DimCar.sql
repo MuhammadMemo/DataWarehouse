@@ -6,7 +6,7 @@
 	CarName nvarchar(30) NOT NULL,
 	Description nvarchar(30) NOT NULL,
 	
-	UpdatLasteTime datetime NOT NULL,
+	UpdatLasteTime datetime default getdate(),
 
 CONSTRAINT [PK_DimCar_1] PRIMARY KEY CLUSTERED 
 (

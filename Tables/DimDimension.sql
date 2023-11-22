@@ -8,7 +8,7 @@
 	SizeName nvarchar(30) ,
 	ConfigrationName  nvarchar(30),
 	
-	UpdatLasteTime datetime NOT NULL,
+	UpdatLasteTime datetime default getdate(),
 	CONSTRAINT [PK_DimDimension] PRIMARY KEY CLUSTERED 
 (
 	DimensionKey ASC,
