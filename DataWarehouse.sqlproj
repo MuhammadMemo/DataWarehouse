@@ -68,7 +68,7 @@
     <Build Include="Tables\DimProduct.sql" />
     <Build Include="Tables\DimBranche.sql" />
     <Build Include="Script\CREATE DATABASE [DataWarehouse].sql" />
-    <None Include="Script\Script1.sql" />
+    <None Include="Script\DimCampanyValue.sql" />
     <None Include="Script\DimDateValue.sql" />
     <Build Include="Tables\DimCustomer.sql" />
     <Build Include="Tables\LogTable.sql" />
