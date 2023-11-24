@@ -96,6 +96,7 @@
     <Build Include="Tables\FactProduction.sql" />
     <Build Include="Tables\FactBOM.sql" />
     <Build Include="Tables\FactPro.sql" />
+    <Build Include="Tables\DimOrderStatus.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataWarehouse.publish.xml" />
