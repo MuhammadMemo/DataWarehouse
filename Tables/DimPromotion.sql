@@ -1,13 +1,20 @@
 ﻿CREATE TABLE [dbo].[DimPromotion]
 (
 	CompanyKey tinyint NOT NULL,
-	PromotionKey [int] identity (1,1) NOT NULL ,
-	PromotionsAlternativeKey nvarchar(40) NOT NULL,
-	PromotionName nvarchar(200) NOT NULL,
-	PromotionType tinyint NOT NULL,
-	Amount MONEY default 0.0,
-	Prec DECIMAL default 0.0,
-	Location nvarchar(30) NOT NULL,
+	PromotionKey int identity (1,1) NOT NULL ,
+	PromotionAlternativeKey bigint NOT NULL, --[RECID] [bigint] NOT NULL
+	STATUS tinyint NOT NULL,--Status
+	FROMDATE date NOT NULL,
+	TODATE date NOT NULL,
+	DELIVERYDATE date  NULL,
+	DESCRIPTION nvarchar(100) NOT NULL,
+	ITEMGROUP nvarchar(50) NOT NULL,
+	DESCACTIVE int NOT NULL,
+	SORTDISC bigint NOT NULL,
+	PRICEDISCOUNT MONEY default 0.0,
+	DISCOUNT DECIMAL default 0.0,
+	QUANTITY int NOT NULL,
+	Location nvarchar(150) NOT NULL,
 	UpdatLasteTime datetime default getdate(),
 CONSTRAINT [PK_DimPromotion_1] PRIMARY KEY CLUSTERED 
 (
