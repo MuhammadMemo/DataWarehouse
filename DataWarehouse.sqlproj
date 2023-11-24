@@ -93,6 +93,10 @@
     <Build Include="Tables\DimFinTransType.sql" />
     <Build Include="Tables\FactPurchase.sql" />
     <Build Include="Tables\DimPurchaseType.sql" />
+    <Build Include="Tables\FactCar.sql" />
+    <Build Include="Tables\FactProduction.sql" />
+    <Build Include="Tables\FactBOM.sql" />
+    <Build Include="Tables\FactPro.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataWarehouse.publish.xml" />

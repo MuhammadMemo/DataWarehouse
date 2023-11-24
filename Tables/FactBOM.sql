@@ -1,0 +1,4 @@
+﻿CREATE TABLE [dbo].[FactBOM]
+(
+	[Id] INT NOT NULL PRIMARY KEY
+)

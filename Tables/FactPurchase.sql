@@ -1,4 +1,5 @@
-﻿CREATE TABLE [dbo].[FactPurchase]
+﻿-- PurchaseRequisition, PurchasePlane
+CREATE TABLE [dbo].[FactPurchase]
 (
 	--PRIMARY Key :
 InventTranceKey nvarchar(20) NOT NULL,
