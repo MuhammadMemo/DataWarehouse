@@ -47,7 +47,7 @@ LastupdateDate datetime DEFAULT getDate()
     CONSTRAINT [PF_Unit] FOREIGN KEY  (UnitKey,CompanyKey) REFERENCES DimUnit(UnitKey,CompanyKey),
     CONSTRAINT [PF_Employee] FOREIGN KEY  (EmployeeKey,CompanyKey) REFERENCES DimEmployee(EmployeeKey,CompanyKey),
     CONSTRAINT [PF_Car] FOREIGN KEY (CarKey,CompanyKey) REFERENCES DimCar(CarKey,CompanyKey),
-    CONSTRAINT [PF_Status] FOREIGN KEY (StatusKey) REFERENCES DimSalesStatus(StatusKey),
+    CONSTRAINT [PF_Status] FOREIGN KEY (StatusKey) REFERENCES DimOrderStatus(StatusKey),
     CONSTRAINT [PF_Type] FOREIGN KEY (TypeKey) REFERENCES DimSalesType(TypeKey),
     CONSTRAINT [PF_Company] FOREIGN KEY (CompanyKey) REFERENCES DimCompany(CompanyKey),
 
