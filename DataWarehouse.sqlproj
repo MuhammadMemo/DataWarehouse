@@ -82,8 +82,8 @@
     <Build Include="Tables\DimCar.sql" />
     <Build Include="Tables\FactSalary.sql" />
     <Build Include="Tables\FactInventoryTrance.sql" />
-    <Build Include="Tables\DimStatusIssue.sql" />
-    <Build Include="Tables\DimStatusReceipt.sql" />
+    <Build Include="Tables\DimInventStatusIssue.sql" />
+    <Build Include="Tables\DimInventStatusReceipt.sql" />
     <Build Include="Tables\DimInventTransType.sql" />
     <Build Include="Tables\DimSalesType.sql" />
     <Build Include="Tables\FactInventOnHand.sql" />
