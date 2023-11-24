@@ -75,7 +75,6 @@
     <Build Include="Tables\DimRegion.sql" />
     <Build Include="Tables\DimVendor.sql" />
     <Build Include="Tables\DimPromotion.sql" />
-    <Build Include="Tables\DimOrderStatus.sql" />
     <Build Include="Tables\DimDimension.sql" />
     <Build Include="Tables\DimUnit.sql" />
     <Build Include="Tables\DimEmployee.sql" />
