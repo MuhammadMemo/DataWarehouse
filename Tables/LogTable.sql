@@ -9,5 +9,7 @@
 	[ModifiedDate] [datetime] NULL,
 	[StartPakage] [datetime] NULL,
 	[Note] [nvarchar](max) NULL,
+	TableNo tinyint not null , 
+	Status nvarchar (30) not null,
 	[ScondsDiff]  AS (datediff(minute,[StartPakage],[ModifiedDate]))
 	)

@@ -20,7 +20,7 @@ CREATE tABLE [dbo].[DimDate]
 	WeekOfQuarter varchar(2) NULL,
 	WeekOfYear varchar(2) NULL,
 	Month varchar(2) NULL,
-	MonthName varchar(9) NULL,
+	MonthName nvarchar(20) NULL,
 	MonthOfQuarter varchar(2) NULL ,
 	Quarter char(1) NULL,
 	QuarterName varchar(9) NULL,
@@ -35,7 +35,9 @@ CREATE tABLE [dbo].[DimDate]
 	FirstDayOfYear date NULL,
 	LastDayOfYear date NULL,
 	Season nvarchar(50) Null,
-	Semester nvarchar(50) Null
+	Semester nvarchar(50) Null,
+	IsHoliday bit,
+	HolidayName  nvarchar(50)
 	)
 	WITH(DATA_COMPRESSION = PAGE)
 	GO
