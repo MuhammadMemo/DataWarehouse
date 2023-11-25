@@ -23,7 +23,7 @@ CREATE tABLE [dbo].[DimDate]
 	MonthName nvarchar(20) NULL,
 	MonthOfQuarter varchar(2) NULL ,
 	Quarter char(1) NULL,
-	QuarterName varchar(9) NULL,
+	QuarterName nvarchar(20) NULL,
 	Year char(4) NULL,
 	YearName char(7) NULL,
 	MonthYear char(10) NULL,
