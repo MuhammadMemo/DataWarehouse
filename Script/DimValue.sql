@@ -65,3 +65,6 @@ INSERT [dbo].[DimFixSalesType] ([TypeKey], [TypeName]) VALUES (2, N'Subscription
 INSERT [dbo].[DimFixSalesType] ([TypeKey], [TypeName]) VALUES (3, N'Sales order')
 INSERT [dbo].[DimFixSalesType] ([TypeKey], [TypeName]) VALUES (5, N'Blanket order')
 INSERT [dbo].[DimFixSalesType] ([TypeKey], [TypeName]) VALUES (6, N'SItem requirements')
+go
+INSERT [dbo].[DimGendr]   ([GendrKey], [GendrName]) VALUES (1, N'Male')
+INSERT [dbo].[DimGendr]   ([GendrKey], [GendrName]) VALUES (2, N'Female')

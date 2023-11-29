@@ -100,6 +100,9 @@
     <Build Include="Tables\DimFixOrderStatus.sql" />
     <Build Include="Script\View.sql" />
     <Build Include="Tables\DimEmpDeductionAllowance.sql" />
+    <Build Include="Tables\DimEmpVacationType.sql" />
+    <Build Include="Tables\DimEmpHoliday.sql" />
+    <Build Include="Tables\DimGendr.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataWarehouse.publish.xml" />
