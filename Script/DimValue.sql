@@ -54,3 +54,14 @@ INSERT [dbo].[DimFixInventTransType] ([TransTypeKey], [TransTypeName]) VALUES (1
 INSERT [dbo].[DimFixInventTransType] ([TransTypeKey], [TransTypeName]) VALUES (24, N'Quotation')
 INSERT [dbo].[DimFixInventTransType] ([TransTypeKey], [TransTypeName]) VALUES (100, N'Production co/by')
 GO
+INSERT [dbo].[DimFixPurchaseType] ([TypeKey], [TypeName]) VALUES (0, N'Journal')
+INSERT [dbo].[DimFixPurchaseType] ([TypeKey], [TypeName]) VALUES (2, N'Subscription')
+INSERT [dbo].[DimFixPurchaseType] ([TypeKey], [TypeName]) VALUES (3, N'Purchase order')
+GO
+
+INSERT [dbo].[DimFixSalesType] ([TypeKey], [TypeName]) VALUES (0, N'Journal')
+INSERT [dbo].[DimFixSalesType] ([TypeKey], [TypeName]) VALUES (1, N'Quotation')
+INSERT [dbo].[DimFixSalesType] ([TypeKey], [TypeName]) VALUES (2, N'Subscription')
+INSERT [dbo].[DimFixSalesType] ([TypeKey], [TypeName]) VALUES (3, N'Sales order')
+INSERT [dbo].[DimFixSalesType] ([TypeKey], [TypeName]) VALUES (5, N'Blanket order')
+INSERT [dbo].[DimFixSalesType] ([TypeKey], [TypeName]) VALUES (6, N'SItem requirements')
