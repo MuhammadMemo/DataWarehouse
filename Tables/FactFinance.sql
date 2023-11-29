@@ -15,5 +15,5 @@
 	CONSTRAINT [PF_FinCompany] FOREIGN KEY (CompanyKey) REFERENCES DimCompany(CompanyKey),
 	CONSTRAINT [PF_FinDate] FOREIGN KEY (FinancialDateAlternativeKey) REFERENCES Dimdate(DateKey),
 	CONSTRAINT [PF_FinAccount] FOREIGN KEY (AccountKey,CompanyKey) REFERENCES DimAccount(AccountKey,CompanyKey),
-	CONSTRAINT [PF_FinTransType] FOREIGN KEY (TransTypeKey) REFERENCES DimFinTransType(TransTypeKey),
+	CONSTRAINT [PF_FinTransType] FOREIGN KEY (TransTypeKey) REFERENCES DimFixFinTransType(TransTypeKey),
 )

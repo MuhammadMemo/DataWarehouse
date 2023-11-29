@@ -69,7 +69,7 @@
     <Build Include="Tables\DimProduct.sql" />
     <Build Include="Tables\DimBranche.sql" />
     <Build Include="Script\CREATE DATABASE [DataWarehouse].sql" />
-    <None Include="Script\DimCampanyValue.sql" />
+    <None Include="Script\DimValue.sql" />
     <None Include="Script\DimDateValue.sql" />
     <Build Include="Tables\DimCustomer.sql" />
     <Build Include="Tables\LogTable.sql" />
@@ -82,22 +82,23 @@
     <Build Include="Tables\DimCar.sql" />
     <Build Include="Tables\FactSalary.sql" />
     <Build Include="Tables\FactInventoryTrance.sql" />
-    <Build Include="Tables\DimInventStatusIssue.sql" />
-    <Build Include="Tables\DimInventStatusReceipt.sql" />
-    <Build Include="Tables\DimInventTransType.sql" />
-    <Build Include="Tables\DimSalesType.sql" />
+    <Build Include="Tables\DimFixInventStatusIssue.sql" />
+    <Build Include="Tables\DimFixInventStatusReceipt.sql" />
+    <Build Include="Tables\DimFixInventTransType.sql" />
+    <Build Include="Tables\DimFixSalesType.sql" />
     <Build Include="Tables\FactInventOnHand.sql" />
     <Build Include="Script\Procedure1.sql" />
     <Build Include="Tables\FactFinance.sql" />
     <Build Include="Tables\DimAccount.sql" />
-    <Build Include="Tables\DimFinTransType.sql" />
+    <Build Include="Tables\DimFixFinTransType.sql" />
     <Build Include="Tables\FactPurchase.sql" />
-    <Build Include="Tables\DimPurchaseType.sql" />
+    <Build Include="Tables\DimFixPurchaseType.sql" />
     <Build Include="Tables\FactCar.sql" />
     <Build Include="Tables\FactProduction.sql" />
     <Build Include="Tables\FactBOM.sql" />
     <Build Include="Tables\FactProductCoverage.sql" />
-    <Build Include="Tables\DimOrderStatus.sql" />
+    <Build Include="Tables\DimFixOrderStatus.sql" />
+    <Build Include="Script\View.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataWarehouse.publish.xml" />

@@ -1,7 +1,7 @@
 ﻿
 
 
-truncate table [dbo].[DimDate]
+--truncate table [dbo].[DimDate]
 --Value of Start Date Must be Less than Your End Date 
 DECLARE @StartDate DATETIME = '01/01/2013' --Starting value of Date Range
 DECLARE @EndDate DATETIME = '12/31/2025' --End Value of Date Range
@@ -127,10 +127,10 @@ BEGIN
         END AS 'MonthOfQuarter',
         DATEPART(QQ, @CurrentDate) AS 'Quarter',
         CASE DATEPART(QQ, @CurrentDate)
-            WHEN 1 THEN N'الربع الأول'
-            WHEN 2 THEN N'الربع الثاني'
-            WHEN 3 THEN N'الربع الثالث'
-            WHEN 4 THEN N'الربع الرابع'
+            WHEN 1 THEN N'Quarter 1'
+            WHEN 2 THEN N'Quarter 2'
+            WHEN 3 THEN N'Quarter 3'
+            WHEN 4 THEN N'Quarter 4'
         END AS 'QuarterName',
         DATEPART(YEAR, @CurrentDate) AS 'Year',
         'CY ' + CONVERT(VARCHAR, DATEPART(YEAR, @CurrentDate)) AS 'YearName',
@@ -161,216 +161,216 @@ BEGIN
             WHEN 5 THEN 1
             WHEN 6 THEN 1
             WHEN 7 THEN 0
-        END AS 'IsWeekday',
-        NULL AS 'HolidayName'
+        END AS 'IsWeekday'
+      --  NULL AS 'HolidayName'
 
     SET @CurrentDate = DATEADD(DD, 1, @CurrentDate)
 END
         
---============================================================================
--- Step 3.
--- Update Values of Holiday as per USA Govt. Declaration for National Holiday.
---============================================================================
+----============================================================================
+---- Step 3.
+---- Update Values of Holiday as per USA Govt. Declaration for National Holiday.
+----============================================================================
 
-/*Update HOLIDAY Field of USA In dimension*/
-    /* New Years Day - January 1 */
-    UPDATE DimDate
-        SET HolidayName = 'New Year''s Day'
-    WHERE [Month] = 1 AND [DayOfMonth] = 1
+--/*Update HOLIDAY Field of USA In dimension*/
+--    /* New Years Day - January 1 */
+--    UPDATE DimDate
+--        SET HolidayName = 'New Year''s Day'
+--    WHERE [Month] = 1 AND [DayOfMonth] = 1
 
-    /* Martin Luther King, Jr. Day - Third Monday in January starting in 1983 */
-    UPDATE DimDate
-        SET HolidayName = 'Martin Luther King, Jr. Day'
-    WHERE
-        [Month] = 1 AND
-        [DayOfWeek] = 'Monday' AND
-        [Year] >= 1983 AND
-        DayOfWeekInMonth = 3
+--    /* Martin Luther King, Jr. Day - Third Monday in January starting in 1983 */
+--    UPDATE DimDate
+--        SET HolidayName = 'Martin Luther King, Jr. Day'
+--    WHERE
+--        [Month] = 1 AND
+--        [DayOfWeek] = 'Monday' AND
+--        [Year] >= 1983 AND
+--        DayOfWeekInMonth = 3
 
-    /* Valentine's Day - February 14 */
-    UPDATE DimDate
-        SET HolidayName = 'Valentine''s Day'
-    WHERE
-        [Month] = 2 AND
-        [DayOfMonth] = 14
+--    /* Valentine's Day - February 14 */
+--    UPDATE DimDate
+--        SET HolidayName = 'Valentine''s Day'
+--    WHERE
+--        [Month] = 2 AND
+--        [DayOfMonth] = 14
 
-    /* President's Day - Third Monday in February */
-    UPDATE DimDate
-        SET HolidayName = 'President''s Day'
-    WHERE
-        [Month] = 2 AND
-        [DayOfWeek] = 'Monday' AND
-        [DayOfWeekInMonth] = 3
+--    /* President's Day - Third Monday in February */
+--    UPDATE DimDate
+--        SET HolidayName = 'President''s Day'
+--    WHERE
+--        [Month] = 2 AND
+--        [DayOfWeek] = 'Monday' AND
+--        [DayOfWeekInMonth] = 3
 
-    /* Saint Patrick's Day */
-    UPDATE DimDate
-        SET HolidayName = 'Saint Patrick''s Day'
-    WHERE
-        [Month] = 3 AND
-        [DayOfMonth] = 17
+--    /* Saint Patrick's Day */
+--    UPDATE DimDate
+--        SET HolidayName = 'Saint Patrick''s Day'
+--    WHERE
+--        [Month] = 3 AND
+--        [DayOfMonth] = 17
 
-    /* Memorial Day - Last Monday in May */
-    UPDATE DimDate
-        SET HolidayName = 'Memorial Day'
-    FROM DimDate
-    WHERE DateKey IN 
-    (
-        SELECT
-            MAX(DateKey)
-        FROM DimDate
-        WHERE
-            [MonthName] = 'May' AND
-            [DayOfWeek] = 'Monday'
-        GROUP BY
-            [Year],
-            [Month]
-    )
+--    /* Memorial Day - Last Monday in May */
+--    UPDATE DimDate
+--        SET HolidayName = 'Memorial Day'
+--    FROM DimDate
+--    WHERE DateKey IN 
+--    (
+--        SELECT
+--            MAX(DateKey)
+--        FROM DimDate
+--        WHERE
+--            [MonthName] = 'May' AND
+--            [DayOfWeek] = 'Monday'
+--        GROUP BY
+--            [Year],
+--            [Month]
+--    )
 
-    /* Mother's Day - Second Sunday of May */
-    UPDATE DimDate
-        SET HolidayName = 'Mother''s Day'
-    WHERE
-        [Month] = 5 AND
-        [DayOfWeek] = 'Sunday' AND
-        [DayOfWeekInMonth] = 2
+--    /* Mother's Day - Second Sunday of May */
+--    UPDATE DimDate
+--        SET HolidayName = 'Mother''s Day'
+--    WHERE
+--        [Month] = 5 AND
+--        [DayOfWeek] = 'Sunday' AND
+--        [DayOfWeekInMonth] = 2
 
-    /* Father's Day - Third Sunday of June */
-    UPDATE DimDate
-        SET HolidayName = 'Father''s Day'
-    WHERE
-        [Month] = 6 AND
-        [DayOfWeek] = 'Sunday' AND
-        [DayOfWeekInMonth] = 3
+--    /* Father's Day - Third Sunday of June */
+--    UPDATE DimDate
+--        SET HolidayName = 'Father''s Day'
+--    WHERE
+--        [Month] = 6 AND
+--        [DayOfWeek] = 'Sunday' AND
+--        [DayOfWeekInMonth] = 3
 
-    /* Independence Day */
-    UPDATE DimDate
-        SET HolidayName = 'Independance Day'
-    WHERE [Month] = 7 AND [DayOfMonth] = 4
+--    /* Independence Day */
+--    UPDATE DimDate
+--        SET HolidayName = 'Independance Day'
+--    WHERE [Month] = 7 AND [DayOfMonth] = 4
 
-    /* Labor Day - First Monday in September */
-    UPDATE DimDate
-        SET HolidayName = 'Labor Day'
-    FROM DimDate
-    WHERE DateKey IN 
-    (
-        SELECT
-            MIN(DateKey)
-        FROM DimDate
-        WHERE
-            [MonthName] = 'September' AND
-            [DayOfWeek] = 'Monday'
-        GROUP BY
-            [Year],
-            [Month]
-    )
+--    /* Labor Day - First Monday in September */
+--    UPDATE DimDate
+--        SET HolidayName = 'Labor Day'
+--    FROM DimDate
+--    WHERE DateKey IN 
+--    (
+--        SELECT
+--            MIN(DateKey)
+--        FROM DimDate
+--        WHERE
+--            [MonthName] = 'September' AND
+--            [DayOfWeek] = 'Monday'
+--        GROUP BY
+--            [Year],
+--            [Month]
+--    )
 
-    /* Columbus Day - Second MONDAY in October */
-    UPDATE DimDate
-        SET HolidayName = 'Columbus Day'
-    WHERE
-        [Month] = 10 AND
-        [DayOfWeek] = 'Monday' AND
-        [DayOfWeekInMonth] = 2
+--    /* Columbus Day - Second MONDAY in October */
+--    UPDATE DimDate
+--        SET HolidayName = 'Columbus Day'
+--    WHERE
+--        [Month] = 10 AND
+--        [DayOfWeek] = 'Monday' AND
+--        [DayOfWeekInMonth] = 2
 
-    /* Halloween - 10/31 */
-    UPDATE DimDate
-        SET HolidayName = 'Halloween'
-    WHERE
-        [Month] = 10 AND
-        [DayOfMonth] = 31
+--    /* Halloween - 10/31 */
+--    UPDATE DimDate
+--        SET HolidayName = 'Halloween'
+--    WHERE
+--        [Month] = 10 AND
+--        [DayOfMonth] = 31
 
-    /* Veterans Day - November 11 */
-    UPDATE DimDate
-        SET HolidayName = 'Veterans Day'
-    WHERE
-        [Month] = 11 AND
-        [DayOfMonth] = 11
+--    /* Veterans Day - November 11 */
+--    UPDATE DimDate
+--        SET HolidayName = 'Veterans Day'
+--    WHERE
+--        [Month] = 11 AND
+--        [DayOfMonth] = 11
     
-    /* Thanksgiving - Fourth THURSDAY in November */
-    UPDATE DimDate
-        SET HolidayName = 'Thanksgiving Day'
-    WHERE
-        [Month] = 11 AND
-        [DayOfWeek] = 'Thursday' AND
-        [DayOfWeekInMonth] = 4
+--    /* Thanksgiving - Fourth THURSDAY in November */
+--    UPDATE DimDate
+--        SET HolidayName = 'Thanksgiving Day'
+--    WHERE
+--        [Month] = 11 AND
+--        [DayOfWeek] = 'Thursday' AND
+--        [DayOfWeekInMonth] = 4
 
-    /* Christmas */
-    UPDATE DimDate
-        SET HolidayName = 'Christmas Day'
-    WHERE [Month] = 12 AND
-          [DayOfMonth]  = 25
+--    /* Christmas */
+--    UPDATE DimDate
+--        SET HolidayName = 'Christmas Day'
+--    WHERE [Month] = 12 AND
+--          [DayOfMonth]  = 25
     
-    /* Election Day - The first Tuesday after the first Monday in November */
-    BEGIN
-    DECLARE @Holidays TABLE
-    (
-        [ID] INT IDENTITY(1,1),
-        [DateID] INT,
-        [Week] TINYINT,
-        [Year] CHAR(4),
-        [Day] CHAR(2)
-    )
+--    /* Election Day - The first Tuesday after the first Monday in November */
+--    BEGIN
+--    DECLARE @Holidays TABLE
+--    (
+--        [ID] INT IDENTITY(1,1),
+--        [DateID] INT,
+--        [Week] TINYINT,
+--        [Year] CHAR(4),
+--        [Day] CHAR(2)
+--    )
 
-        INSERT INTO @Holidays([DateID], [Year], [Day])
-            SELECT
-                [DateKey],
-                [Year],
-                [DayOfMonth] 
-            FROM DimDate
-            WHERE
-                [Month] = 11 AND 
-                [DayOfWeek] = 'Monday'
-            ORDER BY
-                [Year],
-                [DayOfMonth]
+--        INSERT INTO @Holidays([DateID], [Year], [Day])
+--            SELECT
+--                [DateKey],
+--                [Year],
+--                [DayOfMonth] 
+--            FROM DimDate
+--            WHERE
+--                [Month] = 11 AND 
+--                [DayOfWeek] = 'Monday'
+--            ORDER BY
+--                [Year],
+--                [DayOfMonth]
 
-        DECLARE @CNTR INT,
-                @POS INT,
-                @STARTYEAR INT,
-                @ENDYEAR INT,
-                @MINDAY INT
+--        DECLARE @CNTR INT,
+--                @POS INT,
+--                @STARTYEAR INT,
+--                @ENDYEAR INT,
+--                @MINDAY INT
 
-        SELECT @CURRENTYEAR = MIN([Year])
-             , @STARTYEAR = MIN([Year])
-             , @ENDYEAR = MAX([Year])
-        FROM @Holidays
+--        SELECT @CURRENTYEAR = MIN([Year])
+--             , @STARTYEAR = MIN([Year])
+--             , @ENDYEAR = MAX([Year])
+--        FROM @Holidays
 
-        WHILE @CURRENTYEAR <= @ENDYEAR
-        BEGIN
-            SELECT @CNTR = COUNT([Year])
-            FROM @Holidays
-            WHERE [Year] = @CURRENTYEAR
+--        WHILE @CURRENTYEAR <= @ENDYEAR
+--        BEGIN
+--            SELECT @CNTR = COUNT([Year])
+--            FROM @Holidays
+--            WHERE [Year] = @CURRENTYEAR
 
-            SET @POS = 1
+--            SET @POS = 1
 
-            WHILE @POS <= @CNTR
-            BEGIN
-                SELECT @MINDAY = MIN(DAY)
-                FROM @Holidays
-                WHERE
-                    [Year] = @CURRENTYEAR AND
-                    [Week] IS NULL
+--            WHILE @POS <= @CNTR
+--            BEGIN
+--                SELECT @MINDAY = MIN(DAY)
+--                FROM @Holidays
+--                WHERE
+--                    [Year] = @CURRENTYEAR AND
+--                    [Week] IS NULL
 
-                UPDATE @Holidays
-                    SET [Week] = @POS
-                WHERE
-                    [Year] = @CURRENTYEAR AND
-                    [Day] = @MINDAY
+--                UPDATE @Holidays
+--                    SET [Week] = @POS
+--                WHERE
+--                    [Year] = @CURRENTYEAR AND
+--                    [Day] = @MINDAY
 
-                SELECT @POS = @POS + 1
-            END
+--                SELECT @POS = @POS + 1
+--            END
 
-            SELECT @CURRENTYEAR = @CURRENTYEAR + 1
-        END
+--            SELECT @CURRENTYEAR = @CURRENTYEAR + 1
+--        END
 
-        UPDATE DimDate
-            SET HolidayName  = 'Election Day'
-        FROM DimDate DT
-            JOIN @Holidays HL ON (HL.DateID + 1) = DT.DateKey
-        WHERE
-            [Week] = 1
-    END
-    --set flag for USA holidays in Dimension
-    UPDATE DimDate
-        SET IsHoliday = CASE WHEN HolidayName IS NULL THEN 0
-                                WHEN HolidayName IS NOT NULL THEN 1 END
+--        UPDATE DimDate
+--            SET HolidayName  = 'Election Day'
+--        FROM DimDate DT
+--            JOIN @Holidays HL ON (HL.DateID + 1) = DT.DateKey
+--        WHERE
+--            [Week] = 1
+--    END
+--    --set flag for USA holidays in Dimension
+--    UPDATE DimDate
+--        SET IsHoliday = CASE WHEN HolidayName IS NULL THEN 0
+--                                WHEN HolidayName IS NOT NULL THEN 1 END

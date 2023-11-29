@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[DimFinTransType]
+﻿CREATE TABLE [dbo].[DimFixFinTransType]
 (
 	TransTypeKey tinyint NOT NULL  PRIMARY KEY,
 	TransTypeName nvarchar(50) Not null
