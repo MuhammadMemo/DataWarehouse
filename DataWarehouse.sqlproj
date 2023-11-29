@@ -99,6 +99,7 @@
     <Build Include="Tables\FactProductCoverage.sql" />
     <Build Include="Tables\DimFixOrderStatus.sql" />
     <Build Include="Script\View.sql" />
+    <Build Include="Tables\DimEmpDeductionAllowance.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataWarehouse.publish.xml" />
