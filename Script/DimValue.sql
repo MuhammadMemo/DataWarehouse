@@ -40,3 +40,17 @@ INSERT [dbo].[DimFixInventStatusReceipt] ([StatusReceiptKey], [StatusReceiptName
 INSERT [dbo].[DimFixInventStatusReceipt] ([StatusReceiptKey], [StatusReceiptName]) VALUES (6, N'Quotation receipt')
 
 GO
+INSERT [dbo].[DimFixInventTransType] ([TransTypeKey], [TransTypeName]) VALUES (0, N'Sales order')
+--INSERT [dbo].[DimFixInventTransType] ([TransTypeKey], [TransTypeName]) VALUES (1, N' ')
+INSERT [dbo].[DimFixInventTransType] ([TransTypeKey], [TransTypeName]) VALUES (2, N'Production')
+INSERT [dbo].[DimFixInventTransType] ([TransTypeKey], [TransTypeName]) VALUES (3, N'Purchase order')
+INSERT [dbo].[DimFixInventTransType] ([TransTypeKey], [TransTypeName]) VALUES (4, N'Transaction')
+INSERT [dbo].[DimFixInventTransType] ([TransTypeKey], [TransTypeName]) VALUES (5, N'Profit/Loss')
+INSERT [dbo].[DimFixInventTransType] ([TransTypeKey], [TransTypeName]) VALUES (6, N'Transfer')
+INSERT [dbo].[DimFixInventTransType] ([TransTypeKey], [TransTypeName]) VALUES (8, N'Production line')
+INSERT [dbo].[DimFixInventTransType] ([TransTypeKey], [TransTypeName]) VALUES (12, N'Project')
+INSERT [dbo].[DimFixInventTransType] ([TransTypeKey], [TransTypeName]) VALUES (13, N'Counting')
+INSERT [dbo].[DimFixInventTransType] ([TransTypeKey], [TransTypeName]) VALUES (15, N'Quarantine order')
+INSERT [dbo].[DimFixInventTransType] ([TransTypeKey], [TransTypeName]) VALUES (24, N'Quotation')
+INSERT [dbo].[DimFixInventTransType] ([TransTypeKey], [TransTypeName]) VALUES (100, N'Production co/by')
+GO
