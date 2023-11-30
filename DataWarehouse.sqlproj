@@ -103,6 +103,7 @@
     <Build Include="Tables\DimEmpVacationType.sql" />
     <Build Include="Tables\DimEmpHoliday.sql" />
     <Build Include="Tables\DimGendr.sql" />
+    <Build Include="Tables\DimEmpVacation.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataWarehouse.publish.xml" />

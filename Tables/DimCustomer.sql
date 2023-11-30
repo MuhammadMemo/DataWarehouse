@@ -7,7 +7,7 @@ CustomerGroup nvarchar(60),
 CustomerType nvarchar(50) NOT NULL,
 CustomerClassification  nvarchar(100) ,
 Birthday date NOT NULL,
-Gendr char ,
+Gender nvarchar(8) ,
 UpdatLasteTime datetime   default getdate(),
 CONSTRAINT [PK_DimCustomers_1] PRIMARY KEY CLUSTERED 
 (
