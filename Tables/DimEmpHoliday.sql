@@ -2,6 +2,7 @@
 (
 	CompanyKey tinyint NOT NULL,
 	HolidayKey int identity (1,1),
+	HolidayAlternativeKey int NOT NULL,
 	HolidayName nvarchar(100) not null,
     YEARS int not null,
 	HolidayDate date not null,
