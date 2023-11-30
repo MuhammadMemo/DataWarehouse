@@ -9,8 +9,7 @@
     <ProjectGuid>{7de7ff7c-d363-4050-a7f7-7868131a6c9c}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
-    <RootPath>
-    </RootPath>
+    <RootPath />
     <RootNamespace>DataWarehouse</RootNamespace>
     <AssemblyName>DataWarehouse</AssemblyName>
     <ModelCollation>1033, CI</ModelCollation>
@@ -50,7 +49,6 @@
   </PropertyGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
-    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
     <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
     <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
   </PropertyGroup>
@@ -73,7 +71,7 @@
     <None Include="Script\DimDateValue.sql" />
     <Build Include="Tables\DimCustomer.sql" />
     <Build Include="Tables\LogTable.sql" />
-    <Build Include="Tables\DimRegion.sql" />
+    <Build Include="Tables\DimGeography.sql" />
     <Build Include="Tables\DimVendor.sql" />
     <Build Include="Tables\DimPromotion.sql" />
     <Build Include="Tables\DimDimension.sql" />
@@ -106,5 +104,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="DataWarehouse.publish.xml" />
+    <None Include="Script\ScriptFactSales.sql" />
   </ItemGroup>
 </Project>
