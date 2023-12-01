@@ -43,8 +43,8 @@ GO
 --LineAmount NUMERIC(28, 12) NOT NULL,
 --TaxAmount NUMERIC(28, 12) NOT NULL, 
 
-alter VIEW dbo._DWFactSales
-AS
+--alter VIEW dbo._DWFactSales
+--AS
 SELECT  
 s.[INVENTTRANSID] as InventTranceKey,
 s.[DATAAREAID] as CompanyKey,
@@ -53,7 +53,7 @@ S.[SALESGROUP] AS BrancheKey,
 
 --s.[CURRENCYCODE] AS [CurrencyKey], 
 s.[CUSTACCOUNT] AS CustomerKey,
-s.[DESCSHOW] as PromotionKey ,
+case when s.[DESCSHOW]=0 then 5637156079 end as PromotionKey ,
 s.[INVENTDIMID] AS DimensionKey,
 
 CASE WHEN SALESUNIT = '' THEN '64' ELSE SALESUNIT END as  UnitKey,
@@ -64,7 +64,7 @@ CASE WHEN s.TRANSACTIONCODE = '' THEN 'بدون' ELSE s.[TRANSACTIONCODE] END as
 --s.[DeliveryCountryRegionId] AS RegionKey,
 --s.DELIVERYSTATE as [State],
 --s.DELIVERYCOUNTY as City,
- (SELECT      max(y.RECID) 
+(SELECT      max(y.RECID) 
 FROM   dbo.ADDRESSCOUNTRYREGION AS c LEFT OUTER JOIN
 dbo.ADDRESSSTATE AS t ON c.COUNTRYREGIONID = t.COUNTRYREGIONID 
 AND c.DATAAREAID = t.DATAAREAID LEFT OUTER JOIN

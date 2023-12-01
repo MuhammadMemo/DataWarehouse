@@ -19,9 +19,9 @@ OrderDateAlternativeKey  int  not null,
 ProductionDateAlternativeKey  int  not null,
 ShippingDateAlternativeKey int  not null,
 --TimeKey tinyint  not null,
-GeographyKey int ,
-StateKey int ,
-CityKey int,
+GeographyKey  int ,
+--StateKey int ,
+--CityKey int,
 
 --Degenerate Dim :
 SalesOrderNumber nvarchar(20) NOT NULL,

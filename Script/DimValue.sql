@@ -68,3 +68,13 @@ INSERT [dbo].[DimFixSalesType] ([TypeKey], [TypeName]) VALUES (6, N'SItem requir
 go
 INSERT [dbo].[DimGendr]   ([GendrKey], [GendrName]) VALUES (1, N'Male')
 INSERT [dbo].[DimGendr]   ([GendrKey], [GendrName]) VALUES (2, N'Female')
+
+
+INSERT INTO [dbo].[DimEmployee]
+           ([CompanyKey],[EmployeeAlternativeKey],[EmployeeName],[Job],[DepartmenName],[DivisionName],[Gender],[ContractType],[ContractDate],[ContractEndDate],[BirthDate],[HireDate],[InsuranceDate],[WorkeStatus]) VALUES
+           (3,19440,'UnKown','UnKown','UnKown','UnKown','UnKown','UnKown','1900/01/01','1900/01/01','1900/01/01','1900/01/01','1900/01/01','UnKown'
+)
+GO
+
+
+
