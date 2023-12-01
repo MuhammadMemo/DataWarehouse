@@ -7,7 +7,7 @@ RegionName nvarchar(50) ,
 StateName nvarchar(50) ,
 CityName nvarchar(100),
 UpdatLasteTime datetime default GetDate(),
-CONSTRAINT [PK_DimRegion] PRIMARY KEY CLUSTERED 
+CONSTRAINT [PK_DimGeography] PRIMARY KEY CLUSTERED 
 (
 	GeographyKey ASC,
     CompanyKey ASC)

@@ -19,7 +19,7 @@ OrderDateAlternativeKey  int  not null,
 ProductionDateAlternativeKey  int  not null,
 ShippingDateAlternativeKey int  not null,
 --TimeKey tinyint  not null,
-RegionKey int ,
+GeographyKey int ,
 StateKey int ,
 CityKey int,
 
@@ -44,7 +44,7 @@ LastupdateDate datetime DEFAULT getDate()
     
     CONSTRAINT [PF_Branche] FOREIGN KEY  (BrancheKey,CompanyKey) REFERENCES DimBranche(BrancheKey,CompanyKey),
     CONSTRAINT [PF_Product] FOREIGN KEY  (ProductKey,CompanyKey) REFERENCES DimProduct(ProductKey,CompanyKey),
-    --CONSTRAINT [PF_Region] FOREIGN KEY  (RegionKey,CompanyKey) REFERENCES DimGeography(GeographyKey,CompanyKey),
+    CONSTRAINT [PF_Geograph] FOREIGN KEY  (GeographyKey,CompanyKey) REFERENCES DimGeography(GeographyKey,CompanyKey),
     CONSTRAINT [PF_Dimension] FOREIGN KEY  (DimensionKey,CompanyKey) REFERENCES DimDimension(DimensionKey,CompanyKey),
     CONSTRAINT [PF_Promotion] FOREIGN KEY  (PromotionKey,CompanyKey) REFERENCES DimPromotion(PromotionKey,CompanyKey),
     CONSTRAINT [PF_Customer] FOREIGN KEY  (CustomerKey,CompanyKey) REFERENCES DimCustomer(CustomerKey,CompanyKey),
