@@ -2,8 +2,8 @@
 (
 	CompanyKey tinyint NOT NULL,
 	PromotionKey int identity (1,1) NOT NULL ,
-	PromotionAlternativeKey bigint NOT NULL, --[RECID] [bigint] NOT NULL
-	STATUS tinyint NOT NULL,--Status
+	PromotionAlternativeKey bigint NOT NULL,
+	STATUS tinyint NOT NULL,
 	FROMDATE date NOT NULL,
 	TODATE date NOT NULL,
 	DELIVERYDATE date  NULL,
