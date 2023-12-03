@@ -3,7 +3,13 @@
 
 --truncate table [dbo].[DimDate]
 --Value of Start Date Must be Less than Your End Date 
-DECLARE @StartDate DATETIME = '01/01/2013' --Starting value of Date Range
+
+INSERT [dbo].[DimDate] ([DateKey], [Date], [FullDate], [DayOfMonth], [DaySuffix], [DayName], [DayOfWeek], [DayOfWeekInMonth], [DayOfWeekInYear], [DayOfQuarter], [DayOfYear], [WeekOfMonth], [WeekOfQuarter], [WeekOfYear], [Month], [MonthName], [MonthOfQuarter], [Quarter], [QuarterName], [Year], [YearName], [MonthYear], [MMYYYY], [FirstDayOfMonth], [LastDayOfMonth], [FirstDayOfQuarter], [LastDayOfQuarter], [FirstDayOfYear], [LastDayOfYear], [Season], [Semester], [IsHoliday], [HolidayName]) VALUES 
+(19000101, CAST(N'1900-01-01T00:00:00.000' AS DateTime), N'01/01/1900', N'1', N'1st', N'Sunday', N'1', N'1', N'1', N'1', N'1', N'1', N'1', N'1', N'1', N'January', N'1', N'1', N'Quarter 1', N'2012', N'CY 1900', N'Jan-1900  ', N'012012', CAST(N'1900-01-01' AS Date), CAST(N'1900-01-31' AS Date), CAST(N'1900-01-01' AS Date), CAST(N'1900-01-01' AS Date), CAST(N'1900-01-01' AS Date), CAST(N'1900-01-01' AS Date), N'Summer Season:From September To February', N'First Semester:From January To June', NULL, N'0')
+
+
+
+DECLARE @StartDate DATETIME = '01/01/2012' --Starting value of Date Range
 DECLARE @EndDate DATETIME = '12/31/2025' --End Value of Date Range
 
 --Temporary Variables To Hold the Values During Processing of Each Date of Year
