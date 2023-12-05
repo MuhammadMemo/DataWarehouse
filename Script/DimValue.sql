@@ -78,6 +78,12 @@ INSERT INTO [dbo].[DimEmployee]
            ([CompanyKey],[EmployeeAlternativeKey],[EmployeeName],[Job],[DepartmenName],[DivisionName],[Gender],[ContractType],[ContractDate],[ContractEndDate],[BirthDate],[HireDate],[InsuranceDate],[WorkeStatus]) VALUES
            (2,19440,'UnKown','UnKown','UnKown','UnKown','UnKown','UnKown','1900/01/01','1900/01/01','1900/01/01','1900/01/01','1900/01/01','UnKown'
 )
+
+
+INSERT INTO [dbo].[DimEmployee]
+           ([CompanyKey],[EmployeeAlternativeKey],[EmployeeName],[Job],[DepartmenName],[DivisionName],[Gender],[ContractType],[ContractDate],[ContractEndDate],[BirthDate],[HireDate],[InsuranceDate],[WorkeStatus]) VALUES
+           (4,19440,'UnKown','UnKown','UnKown','UnKown','UnKown','UnKown','1900/01/01','1900/01/01','1900/01/01','1900/01/01','1900/01/01','UnKown'
+)
 GO
 INSERT [dbo].[DimPromotion] ([CompanyKey], [PromotionAlternativeKey], [STATUS], [FROMDATE], [TODATE], [DELIVERYDATE], [DESCRIPTION], [ITEMGROUP], [DESCACTIVE], [SORTDISC], [PRICEDISCOUNT], [DISCOUNT], [QUANTITY], [Location], [UpdatLasteTime]) VALUES 
 (3, 0, 1, CAST(N'1900-01-01' AS Date), CAST(N'1900-01-01' AS Date), CAST(N'1900-01-01' AS Date), N'نوم كيدز هنا بلاكار 240سم', N'غرف نوم كيدز', 0, 0, 0.0000, CAST(18 AS Decimal(18, 0)), 4, N'الكل', CAST(N'2023-12-02T13:07:25.793' AS DateTime))

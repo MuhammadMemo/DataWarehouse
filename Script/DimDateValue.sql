@@ -9,8 +9,8 @@ INSERT [dbo].[DimDate] ([DateKey], [Date], [FullDate], [DayOfMonth], [DaySuffix]
 
 
 
-DECLARE @StartDate DATETIME = '01/01/2012' --Starting value of Date Range
-DECLARE @EndDate DATETIME = '12/31/2025' --End Value of Date Range
+DECLARE @StartDate DATETIME = '01/01/2026' --Starting value of Date Range
+DECLARE @EndDate DATETIME = '12/31/2030' --End Value of Date Range
 
 --Temporary Variables To Hold the Values During Processing of Each Date of Year
 DECLARE
