@@ -4,10 +4,10 @@ SELECT
 
                         s.INVENTTRANSID AS InventTranceKey, s.DATAAREAID AS CompanyKey, s.ITEMID AS ProductKey, s.SALESGROUP AS BrancheKey,
                         s.CUSTACCOUNT AS CustomerKey, s.INVENTDIMID AS DimensionKey, s.SALESSTATUS AS StatusKey, s.SALESTYPE AS TypeKey,
-
+                       
                          CASE WHEN s.DESCSHOW = 0 THEN 5637156079 else s.DESCSHOW  END AS PromotionKey, 
                          CASE WHEN s.SALESUNIT = '' THEN '64' ELSE s.SALESUNIT END AS UnitKey,
-                         CASE WHEN s.TRANSACTIONCODE = '' THEN 'بدون' ELSE s.TRANSACTIONCODE END AS CarKey, 
+                         CASE WHEN s.Transport = '' THEN 'بدون' ELSE s.Transport END AS CarKey, 
                          ISNULL(B.SALESRESPONSIBLE, N'19440') AS EmployeeKey,
 
                          --trim(s.DELIVERYCOUNTRYREGIONID) AS DELIVERYCOUNTRYREGIONID, trim(s.DELIVERYSTATE) AS DELIVERYSTATE, trim(s.DELIVERYCOUNTY) AS DELIVERYCOUNTY,
@@ -35,4 +35,4 @@ SELECT
 FROM            dbo.SALESLINE AS s LEFT OUTER JOIN dbo.SALESTABLE AS B 
                 ON s.SALESID = B.SALESID AND s.DATAAREAID = B.DATAAREAID
                          
-WHERE        (s.SHIPPINGDATEREQUESTED >= CONVERT(datetime, '2013-01-01 00:00:00.000', 102)) 
+WHERE        (s.SHIPPINGDATEREQUESTED >= CONVERT(datetime, '2013-01-01 00:00:00.000', 102)) and s.Transport is null

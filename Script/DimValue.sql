@@ -94,3 +94,5 @@ INSERT [dbo].[DimPromotion] ([CompanyKey], [PromotionAlternativeKey], [STATUS], 
 
 
 
+INSERT [dbo].[DimCar] ([CompanyKey],  [CarAlternativeKey], [CarNumber], [CarName], [CarType], [Description], [UpdatLasteTime]) VALUES (4,  N'بدون', N'', N'بدون رقم', 1, N'بدون رقم', CAST(N'2023-12-02T13:07:11.313' AS DateTime))
+INSERT [dbo].[DimPromotion] ([CompanyKey],  [PromotionAlternativeKey], [STATUS], [FROMDATE], [TODATE], [DELIVERYDATE], [DESCRIPTION], [ITEMGROUP], [DESCACTIVE], [SORTDISC], [PRICEDISCOUNT], [DISCOUNT], [QUANTITY], [Location], [UpdatLasteTime]) VALUES (4,   5637156079, 0, CAST(N'1900-01-01' AS Date), CAST(N'1900-01-01' AS Date), CAST(N'1900-01-01' AS Date), N'غير معروف', N'غرف نوم رئيسية', 0, 0, 0.0000, CAST(0 AS Decimal(18, 0)), 0, N'الكل', CAST(N'2023-12-02T13:07:25.793' AS DateTime))
