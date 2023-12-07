@@ -110,4 +110,7 @@
     <None Include="Script\Create _DWPromotion.sql" />
     <None Include="Script\Create View_DWEmp.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="DataWarehouse.refactorlog" />
+  </ItemGroup>
 </Project>

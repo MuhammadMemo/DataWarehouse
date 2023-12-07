@@ -12,7 +12,7 @@ PromotionKey int  not null,
 DimensionKey int  not null, 
 UnitKey  int  not null,
 EmployeeKey  int  not null,
-StatusKey  tinyint  not null,
+StatusKey  tinyint  not null IDENTITY,
 TypeKey  tinyint not null,
 CarKey  smallint  null,
 OrderDateAlternativeKey  int  not null,
@@ -25,7 +25,7 @@ GeographyKey  int ,
 
 --Degenerate Dim :
 SalesOrderNumber nvarchar(20) NOT NULL,
-SalesOrderLineNumber int NOT NULL,
+SalesOrderLineNumber numeric(18, 0) NOT NULL,
 OrderDate Date,
 ProductionDate Date,
 ShippingDate Date,
@@ -38,7 +38,7 @@ LineAmount NUMERIC(28, 12) NOT NULL,
 AmountAfterTax  NUMERIC(28, 12) NOT NULL,
 TaxAmount NUMERIC(28, 12) NOT NULL, 
 --Trace
-IsDeleted bit DEFAULT 0 NOT NULL,
+[Status] bit DEFAULT 0 NOT NULL,
 LastupdateDate datetime DEFAULT getDate()
     CONSTRAINT [PK_FactSales] PRIMARY KEY (CompanyKey,InventTranceKey) ,
     
