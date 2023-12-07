@@ -85,7 +85,6 @@
     <Build Include="Tables\DimFixInventTransType.sql" />
     <Build Include="Tables\DimFixSalesType.sql" />
     <Build Include="Tables\FactInventOnHand.sql" />
-    <Build Include="Script\Procedure1.sql" />
     <Build Include="Tables\FactFinance.sql" />
     <Build Include="Tables\DimAccount.sql" />
     <Build Include="Tables\DimFixFinTransType.sql" />
@@ -96,7 +95,6 @@
     <Build Include="Tables\FactBOM.sql" />
     <Build Include="Tables\FactProductCoverage.sql" />
     <Build Include="Tables\DimFixOrderStatus.sql" />
-    <Build Include="Script\View.sql" />
     <Build Include="Tables\DimEmpDeductionAllowance.sql" />
     <Build Include="Tables\DimGendr.sql" />
     <Build Include="Tables\DimEmpVacation.sql" />
