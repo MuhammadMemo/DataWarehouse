@@ -1,6 +1,6 @@
 ﻿alter view  _DWFactSales as 
 
-SELECT     
+SELECT    
 
                         s.INVENTTRANSID AS InventTranceKey, s.DATAAREAID AS CompanyKeySource, s.ITEMID AS ProductKeySource, s.SALESGROUP AS BrancheKeySource,
                         s.CUSTACCOUNT AS CustomerKeySource, s.INVENTDIMID AS DimensionKeySource, s.SALESSTATUS AS StatusKeySource, s.SALESTYPE AS TypeKeySource,
@@ -31,7 +31,7 @@ SELECT
                         
                          dbo.GetTaxSalesSO(s.LINEAMOUNT, s.TAXGROUP) AS AmountAfterTaxSource, 
                          dbo.GetTaxSalesSO(s.LINEAMOUNT, s.TAXGROUP) - s.LINEAMOUNT AS TaxAmountSource,
-                         s.MODIFIEDDATETIME
+                       DATEADD(HOUR, 2,s.MODIFIEDDATETIME) as MODIFIEDDATETIME
 FROM            dbo.SALESLINE AS s LEFT OUTER JOIN dbo.SALESTABLE AS B 
                 ON s.SALESID = B.SALESID AND s.DATAAREAID = B.DATAAREAID
                          
