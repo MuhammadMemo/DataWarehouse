@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[DimMeansOfDating]
 (
 	CompanyKey tinyint Not null,
-	MeansOfDatingKey INT NOT NULL,
+	MeansOfDatingKey INT identity (1,1),
 	MeansOfDatingAlternativeKey bigint,
 	NameMeansOfDating nvarchar(100) not null,
 	UpdatLasteTime datetime default getdate(),

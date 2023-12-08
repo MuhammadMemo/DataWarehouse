@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[DimTermsOfDelivery]
 (
 	CompanyKey tinyint Not null,
-	TermsOfDeliveryKey INT NOT NULL,
+	TermsOfDeliveryKey INT  identity (1,1),
 	TermsOfDeliveryAlternativeKey bigint,
 	NameTermsOfDelivery nvarchar(100) not null,
 	UpdatLasteTime datetime default getdate(),
