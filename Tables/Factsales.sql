@@ -38,7 +38,7 @@ LineAmount NUMERIC(28, 12) NOT NULL,
 AmountAfterTax  NUMERIC(28, 12) NOT NULL,
 TaxAmount NUMERIC(28, 12) NOT NULL, 
 --Trace
-[Status] bit DEFAULT 0 NOT NULL,
+IsDeleted bit DEFAULT 0 NOT NULL,
 LastupdateDate datetime DEFAULT getDate()
     CONSTRAINT [PK_FactSales] PRIMARY KEY (CompanyKey,InventTranceKey) ,
     
