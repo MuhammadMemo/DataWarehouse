@@ -1,12 +1,12 @@
-﻿CREATE TABLE [dbo].[DimPaymentMethods]
+﻿CREATE TABLE [dbo].[DimMethodPayment]
 (
 	CompanyKey tinyint Not null,
-	PaymentMethodsKey bigINT  identity (1,1) NOT NULL ,
-	PaymentMethodsAlternativeKey INT NOT NULL,
-	NamePaymentMethods nvarchar(100) not null,
+	MethodPaymentKey  tinyint identity (1,1) NOT NULL ,
+	MethodPaymentAlternativeKey bigINT NOT NULL,
+	NameMethodsPayment nvarchar(100) not null,
 	UpdatLasteTime datetime default getdate(),
 CONSTRAINT [PK_PaymentMethods_1] PRIMARY KEY CLUSTERED 
 (
-	PaymentMethodsKey ASC,
+	MethodPaymentKey ASC,
     CompanyKey ASC)
 )ON [PRIMARY]

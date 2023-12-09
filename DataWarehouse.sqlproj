@@ -119,7 +119,9 @@
     <None Include="Script\Create_DWPromotion.sql" />
     <None Include="Script\Create_DWUnit.sql" />
     <None Include="Script\Create_DWVendor.sql" />
-    <None Include="Script\Script1.sql" />
+    <None Include="Script\Create DWPaymentMethods.sql" />
+    <None Include="Script\Create _DWMethodAcquisition.sql" />
+    <None Include="Script\Create_DWDlvMode.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DataWarehouse.refactorlog" />

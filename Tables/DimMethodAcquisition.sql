@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[DimMethodAcquisition]
 (
 	CompanyKey tinyint Not null,
-	MethodAcquisitionKey INT identity (1,1),
+	MethodAcquisitionKey tinyint identity (1,1),
 	MethodAcquisitionAlternativeKey bigint,
 	NameMethodAcquisition nvarchar(100) not null,
 	UpdatLasteTime datetime default getdate(),
