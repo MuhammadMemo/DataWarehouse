@@ -100,10 +100,10 @@
     <Build Include="Tables\DimEmpVacation.sql" />
     <Build Include="Tables\DimEmpHoliday.sql" />
     <Build Include="Script\Create _DWRegion.sql" />
-    <Build Include="Tables\DimMeansOfDating.sql" />
-    <Build Include="Tables\DimPaymentMethods.sql" />
-    <Build Include="Tables\DimMeansOfDelivery.sql" />
-    <Build Include="Tables\DimTermsOfDelivery.sql" />
+    <Build Include="Tables\DimMethodAcquisition.sql" />
+    <Build Include="Tables\DimMethodPayment.sql" />
+    <Build Include="Tables\DimMethodDelivery.sql" />
+    <Build Include="Tables\DimTermsDelivery.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataWarehouse.publish.xml" />
