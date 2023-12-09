@@ -66,9 +66,10 @@ INSERT [dbo].[DimFixSalesType] ([TypeKey], [TypeName]) VALUES (3, N'Sales order'
 INSERT [dbo].[DimFixSalesType] ([TypeKey], [TypeName]) VALUES (5, N'Blanket order')
 INSERT [dbo].[DimFixSalesType] ([TypeKey], [TypeName]) VALUES (6, N'SItem requirements')
 go
-INSERT INTO [dbo].[DimFixTradType] ([TradTypeKey], [TradTypeName], [TradTypeNameEnglish]) VALUES (0, N'الغرامة المالية',N'Financial Penalty')
-INSERT INTO [dbo].[DimFixTradType] ([TradTypeKey], [TradTypeName], [TradTypeNameEnglish]) VALUES (1, N'الخصومات المالية',N'Financial Deductions')
-INSERT INTO [dbo].[DimFixTradType] ([TradTypeKey], [TradTypeName], [TradTypeNameEnglish]) VALUES (2, N'الفاتورة المالية',N'financial Invoice')
+INSERT INTO [dbo].[DimFixTradType] ([TradTypeKey], [TradTypeName], [TradTypeNameEnglish]) VALUES (0, N'غير معروف',N'UnKown')
+INSERT INTO [dbo].[DimFixTradType] ([TradTypeKey], [TradTypeName], [TradTypeNameEnglish]) VALUES (1, N'الغرامة المالية',N'Financial Penalty')
+INSERT INTO [dbo].[DimFixTradType] ([TradTypeKey], [TradTypeName], [TradTypeNameEnglish]) VALUES (2, N'الخصومات المالية',N'Financial Deductions')
+INSERT INTO [dbo].[DimFixTradType] ([TradTypeKey], [TradTypeName], [TradTypeNameEnglish]) VALUES (3, N'الفاتورة المالية',N'financial Invoice')
 
 go
 INSERT [dbo].[DimGendr]   ([GendrKey], [GendrName]) VALUES (1, N'Male')

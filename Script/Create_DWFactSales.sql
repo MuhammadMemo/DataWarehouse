@@ -1,11 +1,12 @@
-﻿--alter view  _DWFactSales as 
+﻿alter view  _DWFactSales as 
 --
 SELECT     
-top(100)
+--top(10000)
                         s.INVENTTRANSID AS InventTranceKey, s.DATAAREAID AS CompanyKeySource, s.ITEMID AS ProductKeySource, s.SALESGROUP AS BrancheKeySource,
                         s.CUSTACCOUNT AS CustomerKeySource, s.INVENTDIMID AS DimensionKeySource, s.SALESSTATUS AS StatusKeySource, s.SALESTYPE AS TypeKeySource,
-                        --b.PaymMode as MethodPaymentKeySource,
-                         isnull(b.TradRemndType,0) as TradTypeKeySource,isnull(b.NoteSOTrad ,'UnKown') as  NoteSOTradSource,
+                        
+                         isnull(b.TradRemndType,0) as TradTypeKeySource,isnull(b.NoteSOTrad ,' ') as  NoteTradSource,
+
                        isnull((select max(RECID) from smmBusRelSalesDistrictGroup sm where  b.SalesDistrictGroup=sm.SalesDistrictId and b.DATAAREAID=sm.DATAAREAID),1) as MethodAcquisitionKeySource,
                         isnull((select max(RECID) from DlvMode sm where  b.DlvMode=sm.Code and b.DATAAREAID=sm.DATAAREAID),1) as MethodDeliveryKeySource,
                        isnull((select max(RECID) from CustPaymModeTable sm where  b.PaymMode=sm.PaymMode and b.DATAAREAID=sm.DATAAREAID),1) as MethodPaymentKeySource,
