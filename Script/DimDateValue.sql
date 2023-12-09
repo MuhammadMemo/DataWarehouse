@@ -1,16 +1,73 @@
 ﻿
 
 
---truncate table [dbo].[DimDate]
+
+USE [DataWarehouse]
+GO
+
+/****** Object:  Table [dbo].[DimDate]    Script Date: 09-12-2023 11:38:31 PM ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[DimDate]') AND type in (N'U'))
+DROP TABLE [dbo].[DimDate]
+GO
+
+/****** Object:  Table [dbo].[DimDate]    Script Date: 09-12-2023 11:38:31 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[DimDate](
+	[DateKey] [int] NOT NULL,
+	[Date] [datetime] NULL,
+	[FullDate] [char](10) NULL,
+	[DayOfMonth] [varchar](2) NULL,
+	[DaySuffix] [varchar](4) NULL,
+	[DayName] [varchar](9) NULL,
+	[DayOfWeek] [char](1) NULL,
+	[DayOfWeekInMonth] [varchar](2) NULL,
+	[DayOfWeekInYear] [varchar](2) NULL,
+	[DayOfQuarter] [varchar](3) NULL,
+	[DayOfYear] [varchar](3) NULL,
+	[WeekOfMonth] [varchar](1) NULL,
+	[WeekOfQuarter] [varchar](2) NULL,
+	[WeekOfYear] [varchar](2) NULL,
+	[Month] [varchar](2) NULL,
+	[MonthName] [nvarchar](20) NULL,
+	[MonthOfQuarter] [varchar](2) NULL,
+	[Quarter] [char](1) NULL,
+	[QuarterName] [nvarchar](20) NULL,
+	[Year] [char](4) NULL,
+	[YearName] [char](7) NULL,
+	[MonthYear] [char](10) NULL,
+	[MMYYYY] [char](6) NULL,
+	[FirstDayOfMonth] [date] NULL,
+	[LastDayOfMonth] [date] NULL,
+	[FirstDayOfQuarter] [date] NULL,
+	[LastDayOfQuarter] [date] NULL,
+	[FirstDayOfYear] [date] NULL,
+	[LastDayOfYear] [date] NULL,
+	[Season] [nvarchar](50) NULL,
+	[Semester] [nvarchar](50) NULL,
+	[IsHoliday] [bit] NULL,
+	[HolidayName] [nvarchar](50) NULL,
+ CONSTRAINT [PK_DimDate] PRIMARY KEY CLUSTERED 
+(
+	[DateKey] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF, DATA_COMPRESSION = PAGE) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+truncate table [dbo].[DimDate]
 --Value of Start Date Must be Less than Your End Date 
+
 
 INSERT [dbo].[DimDate] ([DateKey], [Date], [FullDate], [DayOfMonth], [DaySuffix], [DayName], [DayOfWeek], [DayOfWeekInMonth], [DayOfWeekInYear], [DayOfQuarter], [DayOfYear], [WeekOfMonth], [WeekOfQuarter], [WeekOfYear], [Month], [MonthName], [MonthOfQuarter], [Quarter], [QuarterName], [Year], [YearName], [MonthYear], [MMYYYY], [FirstDayOfMonth], [LastDayOfMonth], [FirstDayOfQuarter], [LastDayOfQuarter], [FirstDayOfYear], [LastDayOfYear], [Season], [Semester], [IsHoliday], [HolidayName]) VALUES 
 (19000101, CAST(N'1900-01-01T00:00:00.000' AS DateTime), N'01/01/1900', N'1', N'1st', N'Sunday', N'1', N'1', N'1', N'1', N'1', N'1', N'1', N'1', N'1', N'January', N'1', N'1', N'Quarter 1', N'2012', N'CY 1900', N'Jan-1900  ', N'012012', CAST(N'1900-01-01' AS Date), CAST(N'1900-01-31' AS Date), CAST(N'1900-01-01' AS Date), CAST(N'1900-01-01' AS Date), CAST(N'1900-01-01' AS Date), CAST(N'1900-01-01' AS Date), N'Summer Season:From September To February', N'First Semester:From January To June', NULL, N'0')
 
-
-
-DECLARE @StartDate DATETIME = '01/01/2026' --Starting value of Date Range
-DECLARE @EndDate DATETIME = '12/31/2030' --End Value of Date Range
+DECLARE @StartDate DATETIME = '01/01/2000' --Starting value of Date Range
+DECLARE @EndDate DATETIME = '12/31/2035' --End Value of Date Range
 
 --Temporary Variables To Hold the Values During Processing of Each Date of Year
 DECLARE
