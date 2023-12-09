@@ -104,6 +104,7 @@
     <Build Include="Tables\DimMethodPayment.sql" />
     <Build Include="Tables\DimMethodDelivery.sql" />
     <Build Include="Tables\DimTermsDelivery.sql" />
+    <Build Include="Tables\DimFixTradType.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataWarehouse.publish.xml" />

@@ -18,7 +18,7 @@ CarKey  smallint  null,
 MethodAcquisitionKey tinyint NOT NULL,
 MethodDeliverykey tinyint NOT NULL,
 PaymentMethodKey tinyint NOT NULL,
---TermsDeliveryKey INT NOT NULL,
+TradTypeKey tinyint  NULL,
 
 OrderDateAlternativeKey  int  not null,
 ProductionDateAlternativeKey  int  not null,
@@ -57,7 +57,8 @@ LastupdateDate datetime DEFAULT getDate()
     CONSTRAINT [PF_MethodDelivery] FOREIGN KEY  (MethodDeliverykey,CompanyKey) REFERENCES DimMethodDelivery(MethodDeliverykey,CompanyKey),
     CONSTRAINT [PF_MethodPayment] FOREIGN KEY  (PaymentMethodKey,CompanyKey) REFERENCES DimMethodPayment(MethodPaymentKey,CompanyKey),
 
-    --CONSTRAINT [PF_TermsDeliveryKey] FOREIGN KEY  (TermsDeliveryKey,CompanyKey) REFERENCES DimTermsDelivery(TermsDeliveryKey,CompanyKey),
+    CONSTRAINT [PF_TFixTradTypeKey] FOREIGN KEY  (TradTypeKey) REFERENCES DimFixTradType(TradTypeKey),
+
     CONSTRAINT [PF_Employee] FOREIGN KEY  (EmployeeKey,CompanyKey) REFERENCES DimEmployee(EmployeeKey,CompanyKey),
     CONSTRAINT [PF_Car] FOREIGN KEY (CarKey,CompanyKey) REFERENCES DimCar(CarKey,CompanyKey),
     CONSTRAINT [PF_Status] FOREIGN KEY (StatusKey) REFERENCES DimFixOrderStatus(StatusKey),
