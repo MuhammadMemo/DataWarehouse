@@ -42,6 +42,7 @@ DiscountAmount NUMERIC(28, 12),
 LineAmount NUMERIC(28, 12) NOT NULL,
 AmountAfterTax  NUMERIC(28, 12) NOT NULL,
 TaxAmount NUMERIC(28, 12) NOT NULL, 
+Payment NUMERIC(28, 12) NOT NULL, 
 --Trace
 IsDeleted bit DEFAULT 0 NOT NULL,
 LastupdateDate datetime DEFAULT getDate()
