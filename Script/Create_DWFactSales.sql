@@ -1,4 +1,4 @@
-﻿--alter view  _DWFactSales as 
+﻿alter view  _DWFactSales as 
 --
 SELECT     
 --top(100)
@@ -7,8 +7,7 @@ SELECT
                         --b.PaymMode as MethodPaymentKeySource,
                          isnull(b.TradRemndType,0) as TradTypeKeySource,isnull(b.NoteSOTrad ,' ') as  NoteTradSource,
 
-                          (select  case when left(ItemGroupId,5)='60-40' then N'منتجات موردين'  else N'منتجات الشركة' end from inventtable where s.ItemID=ItemID  and  s.DATAAREAID=DATAAREAID) as GroupType ,
-
+                        
 
                        isnull((select max(RECID) from smmBusRelSalesDistrictGroup sm where  b.SalesDistrictGroup=sm.SalesDistrictId and b.DATAAREAID=sm.DATAAREAID),1) as MethodAcquisitionKeySource,
                         isnull((select max(RECID) from DlvMode sm where  b.DlvMode=sm.Code and b.DATAAREAID=sm.DATAAREAID),1) as MethodDeliveryKeySource,
@@ -40,8 +39,12 @@ SELECT
                         
                          dbo.GetTaxSalesSO(s.LINEAMOUNT, s.TAXGROUP) AS AmountAfterTaxSource, 
                          dbo.GetTaxSalesSO(s.LINEAMOUNT, s.TAXGROUP) - s.LINEAMOUNT AS TaxAmountSource,
+                         
+                       isnull((select sum(AmountCurCredit) from LedgerJournalTrans t  where t.SALESID=s.SALESID and   t.DATAAREAID=s.DATAAREAID) / (select count(*) from salesline i where i.SALESID=s.SALESID and   i.DATAAREAID=s.DATAAREAID ) ,0) as Payment,
+
                        DATEADD(HOUR, 2,s.MODIFIEDDATETIME) as MODIFIEDDATETIME
 FROM            dbo.SALESLINE AS s LEFT OUTER JOIN dbo.SALESTABLE AS B 
                 ON s.SALESID = B.SALESID AND s.DATAAREAID = B.DATAAREAID
                          
-WHERE        (s.SHIPPINGDATEREQUESTED >= CONVERT(datetime, '2013-01-01 00:00:00.000', 102)) 
+WHERE        (s.SHIPPINGDATEREQUESTED >= CONVERT(datetime, '2013-01-01 00:00:00.000', 102))
+--and s.salesid='06115599_SO'

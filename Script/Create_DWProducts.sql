@@ -1,9 +1,11 @@
 ﻿
---ALTER view [dbo].[_DWProducts]  as
+ALTER view [dbo].[_DWProducts]  as
 SELECT        t.ITEMID AS ProductsAlternativeKey, t.ITEMNAME AS ProductName, t.DATAAREAID, g.NAME AS Category, 
                     p.Name as SubCategory, 
                    case when  p.Status =0 then N'في التشغيل' when  p.Status =1 then N'تحت الإلغاء' when  p.Status =2 then N'ملغاه'  end as  StatusCategory,
                     s.ItemCodeId StatusProduct,
+                    
+                         case when g.GroupType=1  then N'منتجات موردين'  else N'منتجات الشركة' end  as GroupType ,
                         ISNULL((SELECT        SUM(PRICE) AS Expr1
                                  FROM            dbo.INVENTTABLEMODULE AS m
                                  WHERE        (t.ITEMID = ITEMID) AND (t.DATAAREAID = DATAAREAID) AND (MODULETYPE = 2)), 0) AS SalesPrice, ISNULL

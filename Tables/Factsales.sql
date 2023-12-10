@@ -20,7 +20,7 @@ MethodDeliverykey tinyint NOT NULL,
 PaymentMethodKey tinyint NOT NULL,
 TradTypeKey tinyint  NULL,
 NoteTrad nvarchar(500)  NULL,
-GroupType nvarchar(50)  NULL,
+
 
 OrderDateAlternativeKey  int  not null,
 ProductionDateAlternativeKey  int  not null,
