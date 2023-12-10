@@ -1,4 +1,4 @@
-﻿alter view  _DWFactSales as 
+﻿--alter view  _DWFactSales as 
 --
 SELECT     
 --top(100)
