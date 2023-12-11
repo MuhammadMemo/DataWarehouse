@@ -18,15 +18,12 @@ CarKey  smallint  null,
 MethodAcquisitionKey tinyint NOT NULL,
 MethodDeliverykey tinyint NOT NULL,
 PaymentMethodKey tinyint NOT NULL,
-TradTypeKey tinyint  NULL,
-NoteTrad nvarchar(500)  NULL,
-
+--TradTypeKey tinyint  NULL,
+--NoteTrad nvarchar(500)  NULL,
 
 OrderDateAlternativeKey  int  not null,
 ProductionDateAlternativeKey  int  not null,
 ShippingDateAlternativeKey int  not null,
-
-
 
 --Degenerate Dim :
 SalesOrderNumber nvarchar(20) NOT NULL,
@@ -42,7 +39,7 @@ DiscountAmount NUMERIC(28, 12),
 LineAmount NUMERIC(28, 12) NOT NULL,
 AmountAfterTax  NUMERIC(28, 12) NOT NULL,
 TaxAmount NUMERIC(28, 12) NOT NULL, 
-Payment NUMERIC(28, 12) NOT NULL, 
+Payment NUMERIC(28, 12) Default 0, 
 --Trace
 IsDeleted bit DEFAULT 0 NOT NULL,
 LastupdateDate datetime DEFAULT getDate()
@@ -60,7 +57,7 @@ LastupdateDate datetime DEFAULT getDate()
     CONSTRAINT [PF_MethodDelivery] FOREIGN KEY  (MethodDeliverykey,CompanyKey) REFERENCES DimMethodDelivery(MethodDeliverykey,CompanyKey),
     CONSTRAINT [PF_MethodPayment] FOREIGN KEY  (PaymentMethodKey,CompanyKey) REFERENCES DimMethodPayment(MethodPaymentKey,CompanyKey),
 
-    CONSTRAINT [PF_TFixTradTypeKey] FOREIGN KEY  (TradTypeKey) REFERENCES DimFixTradType(TradTypeKey),
+    --CONSTRAINT [PF_TFixTradTypeKey] FOREIGN KEY  (TradTypeKey) REFERENCES DimFixTradType(TradTypeKey),
 
     CONSTRAINT [PF_Employee] FOREIGN KEY  (EmployeeKey,CompanyKey) REFERENCES DimEmployee(EmployeeKey,CompanyKey),
     CONSTRAINT [PF_Car] FOREIGN KEY (CarKey,CompanyKey) REFERENCES DimCar(CarKey,CompanyKey),

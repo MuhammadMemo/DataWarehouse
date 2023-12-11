@@ -4,10 +4,8 @@ SELECT
 --top(100)
                          s.INVENTTRANSID AS InventTranceKey, s.DATAAREAID AS CompanyKeySource, s.ITEMID AS ProductKeySource, s.SALESGROUP AS BrancheKeySource,
                          s.CUSTACCOUNT AS CustomerKeySource, s.INVENTDIMID AS DimensionKeySource, s.SALESSTATUS AS StatusKeySource, s.SALESTYPE AS TypeKeySource,
-                        --b.PaymMode as MethodPaymentKeySource,
-                         isnull(b.TradRemndType,0) as TradTypeKeySource,isnull(b.NoteSOTrad ,' ') as  NoteTradSource,
-
                         
+                         --isnull(b.TradRemndType,0) as TradTypeKeySource,isnull(b.NoteSOTrad ,' ') as  NoteTradSource,
 
                          isnull((select max(RECID) from smmBusRelSalesDistrictGroup sm where  b.SalesDistrictGroup=sm.SalesDistrictId and b.DATAAREAID=sm.DATAAREAID),1) as MethodAcquisitionKeySource,
                          isnull((select max(RECID) from DlvMode sm where  b.DlvMode=sm.Code and b.DATAAREAID=sm.DATAAREAID),1) as MethodDeliveryKeySource,
@@ -20,16 +18,16 @@ SELECT
 
                          --trim(s.DELIVERYCOUNTRYREGIONID) AS DELIVERYCOUNTRYREGIONID, trim(s.DELIVERYSTATE) AS DELIVERYSTATE, trim(s.DELIVERYCOUNTY) AS DELIVERYCOUNTY,
                          
-                         (SELECT        MAX(RECID) AS Expr1 FROM  dbo.ADDRESSCOUNTY AS y
-                           WHERE        (trim(COUNTRYREGIONID) = trim(s.DELIVERYCOUNTRYREGIONID)) AND (trim(STATEID) = trim(s.DELIVERYSTATE)) 
+                         (SELECT  MAX(RECID) AS Expr1 FROM  dbo.ADDRESSCOUNTY AS y
+                           WHERE  (trim(COUNTRYREGIONID) = trim(s.DELIVERYCOUNTRYREGIONID)) AND (trim(STATEID) = trim(s.DELIVERYSTATE)) 
                            AND (trim(COUNTYID) = trim(s.DELIVERYCOUNTY)) AND (DATAAREAID = s.DATAAREAID))   AS GeographyKeySource,
 
                          CAST(REPLACE(CONVERT(date, s.SHIPPINGDATEREQUESTED), '-', '') AS int) AS OrderDateAlternativeKeySource,
                          CAST(REPLACE(CONVERT(date, s.RECEIPTDATEREQUESTED), '-', '') AS int)  AS ProductionDateAlternativeKeySource,
                          CAST(REPLACE(CONVERT(date, s.RECEIPTDATECONFIRMED), '-', '') AS int) AS ShippingDateAlternativeKeySource, 
                          
-                         CONVERT(date, s.SHIPPINGDATEREQUESTED) AS OrderDateSource, 
-                         CONVERT(date, s.RECEIPTDATEREQUESTED) AS ProductionDateSource, 
+                        isnull( CONVERT(date, s.SHIPPINGDATEREQUESTED),'1900-01-01')  AS OrderDateSource, 
+                        isnull( CONVERT(date, s.RECEIPTDATEREQUESTED),'1900-01-01') AS ProductionDateSource, 
                         isnull( CONVERT(date, s.RECEIPTDATECONFIRMED),'1900-01-01') AS ShippingDateSource,
 
                          s.SALESID AS SalesOrderNumber, s.LINENUM AS SalesOrderLineNumberSource, 
