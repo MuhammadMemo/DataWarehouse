@@ -1,7 +1,7 @@
-﻿alter view  _DWFactSales as 
+﻿--alter view  _DWFactSales as 
 --
 SELECT     
---top(100)
+top(100)
                          s.INVENTTRANSID AS InventTranceKey, s.DATAAREAID AS CompanyKeySource, s.ITEMID AS ProductKeySource, s.SALESGROUP AS BrancheKeySource,
                          s.CUSTACCOUNT AS CustomerKeySource, s.INVENTDIMID AS DimensionKeySource, s.SALESSTATUS AS StatusKeySource, s.SALESTYPE AS TypeKeySource,
                         
