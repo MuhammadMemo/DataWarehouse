@@ -10,8 +10,8 @@ SELECT
                          isnull((select max(RECID) from smmBusRelSalesDistrictGroup sm where  b.SalesDistrictGroup=sm.SalesDistrictId and b.DATAAREAID=sm.DATAAREAID),1) as MethodAcquisitionKeySource,
                          isnull((select max(RECID) from DlvMode sm where  b.DlvMode=sm.Code and b.DATAAREAID=sm.DATAAREAID),1) as MethodDeliveryKeySource,
                          isnull((select max(RECID) from CustPaymModeTable sm where  b.PaymMode=sm.PaymMode and b.DATAAREAID=sm.DATAAREAID),1) as MethodPaymentKeySource,
-                      
-                         cast( CASE WHEN s.DESCSHOW = 0 THEN 5637156079 else s.DESCSHOW  END  as bigint)AS PromotionKeySource, 
+                         s.DESCSHOW AS PromotionKeySource,  
+                         --cast( CASE WHEN s.DESCSHOW = 0 THEN 5637156079 else s.DESCSHOW  END  as bigint)AS PromotionKeySource, 
                          CASE WHEN s.SALESUNIT = '' THEN '64' ELSE s.SALESUNIT END AS UnitKeySource,
                          CASE WHEN s.Transport = '' THEN 'بدون' ELSE s.Transport END AS CarKeySource, 
                          ISNULL(B.SALESRESPONSIBLE, N'19440') AS EmployeeKeySource,

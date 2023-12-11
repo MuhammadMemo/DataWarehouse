@@ -5,61 +5,61 @@
 USE [DataWarehouse]
 GO
 
-/****** Object:  Table [dbo].[DimDate]    Script Date: 09-12-2023 11:38:31 PM ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[DimDate]') AND type in (N'U'))
-DROP TABLE [dbo].[DimDate]
+--/****** Object:  Table [dbo].[DimDate]    Script Date: 09-12-2023 11:38:31 PM ******/
+--IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[DimDate]') AND type in (N'U'))
+--DROP TABLE [dbo].[DimDate]
 GO
 
-/****** Object:  Table [dbo].[DimDate]    Script Date: 09-12-2023 11:38:31 PM ******/
-SET ANSI_NULLS ON
-GO
+--/****** Object:  Table [dbo].[DimDate]    Script Date: 09-12-2023 11:38:31 PM ******/
+--SET ANSI_NULLS ON
+--GO
 
-SET QUOTED_IDENTIFIER ON
-GO
+--SET QUOTED_IDENTIFIER ON
+--GO
 
-CREATE TABLE [dbo].[DimDate](
-	[DateKey] [int] NOT NULL,
-	[Date] [datetime] NULL,
-	[FullDate] [char](10) NULL,
-	[DayOfMonth] [varchar](2) NULL,
-	[DaySuffix] [varchar](4) NULL,
-	[DayName] [varchar](9) NULL,
-	[DayOfWeek] [char](1) NULL,
-	[DayOfWeekInMonth] [varchar](2) NULL,
-	[DayOfWeekInYear] [varchar](2) NULL,
-	[DayOfQuarter] [varchar](3) NULL,
-	[DayOfYear] [varchar](3) NULL,
-	[WeekOfMonth] [varchar](1) NULL,
-	[WeekOfQuarter] [varchar](2) NULL,
-	[WeekOfYear] [varchar](2) NULL,
-	[Month] [varchar](2) NULL,
-	[MonthName] [nvarchar](20) NULL,
-	[MonthOfQuarter] [varchar](2) NULL,
-	[Quarter] [char](1) NULL,
-	[QuarterName] [nvarchar](20) NULL,
-	[Year] [char](4) NULL,
-	[YearName] [char](7) NULL,
-	[MonthYear] [char](10) NULL,
-	[MMYYYY] [char](6) NULL,
-	[FirstDayOfMonth] [date] NULL,
-	[LastDayOfMonth] [date] NULL,
-	[FirstDayOfQuarter] [date] NULL,
-	[LastDayOfQuarter] [date] NULL,
-	[FirstDayOfYear] [date] NULL,
-	[LastDayOfYear] [date] NULL,
-	[Season] [nvarchar](50) NULL,
-	[Semester] [nvarchar](50) NULL,
-	[IsHoliday] [bit] NULL,
-	[HolidayName] [nvarchar](50) NULL,
- CONSTRAINT [PK_DimDate] PRIMARY KEY CLUSTERED 
-(
-	[DateKey] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF, DATA_COMPRESSION = PAGE) ON [PRIMARY]
-) ON [PRIMARY]
-GO
+--CREATE TABLE [dbo].[DimDate](
+--	[DateKey] [int] NOT NULL,
+--	[Date] [datetime] NULL,
+--	[FullDate] [char](10) NULL,
+--	[DayOfMonth] [varchar](2) NULL,
+--	[DaySuffix] [varchar](4) NULL,
+--	[DayName] [varchar](9) NULL,
+--	[DayOfWeek] [char](1) NULL,
+--	[DayOfWeekInMonth] [varchar](2) NULL,
+--	[DayOfWeekInYear] [varchar](2) NULL,
+--	[DayOfQuarter] [varchar](3) NULL,
+--	[DayOfYear] [varchar](3) NULL,
+--	[WeekOfMonth] [varchar](1) NULL,
+--	[WeekOfQuarter] [varchar](2) NULL,
+--	[WeekOfYear] [varchar](2) NULL,
+--	[Month] [varchar](2) NULL,
+--	[MonthName] [nvarchar](20) NULL,
+--	[MonthOfQuarter] [varchar](2) NULL,
+--	[Quarter] [char](1) NULL,
+--	[QuarterName] [nvarchar](20) NULL,
+--	[Year] [char](4) NULL,
+--	[YearName] [char](7) NULL,
+--	[MonthYear] [char](10) NULL,
+--	[MMYYYY] [char](6) NULL,
+--	[FirstDayOfMonth] [date] NULL,
+--	[LastDayOfMonth] [date] NULL,
+--	[FirstDayOfQuarter] [date] NULL,
+--	[LastDayOfQuarter] [date] NULL,
+--	[FirstDayOfYear] [date] NULL,
+--	[LastDayOfYear] [date] NULL,
+--	[Season] [nvarchar](50) NULL,
+--	[Semester] [nvarchar](50) NULL,
+--	[IsHoliday] [bit] NULL,
+--	[HolidayName] [nvarchar](50) NULL,
+-- CONSTRAINT [PK_DimDate] PRIMARY KEY CLUSTERED 
+--(
+--	[DateKey] ASC
+--)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF, DATA_COMPRESSION = PAGE) ON [PRIMARY]
+--) ON [PRIMARY]
+--GO
 
 
-truncate table [dbo].[DimDate]
+--truncate table [dbo].[DimDate]
 --Value of Start Date Must be Less than Your End Date 
 
 
