@@ -63,7 +63,7 @@ INSERT [dbo].[DimFixSalesType] ([TypeKey], [TypeName]) VALUES (0, N'Journal')
 INSERT [dbo].[DimFixSalesType] ([TypeKey], [TypeName]) VALUES (1, N'Quotation')
 INSERT [dbo].[DimFixSalesType] ([TypeKey], [TypeName]) VALUES (2, N'Subscription')
 INSERT [dbo].[DimFixSalesType] ([TypeKey], [TypeName]) VALUES (3, N'Sales Order')
-INSERT [dbo].[DimFixSalesType] ([TypeKey], [TypeName]) VALUES (6, N'Return Order')
+INSERT [dbo].[DimFixSalesType] ([TypeKey], [TypeName]) VALUES (4, N'Return Order')
 INSERT [dbo].[DimFixSalesType] ([TypeKey], [TypeName]) VALUES (5, N'Blanket order')
 INSERT [dbo].[DimFixSalesType] ([TypeKey], [TypeName]) VALUES (6, N'SItem requirements')
 
