@@ -5,7 +5,7 @@
 	  SalesCommissionAlternativeKey bigint NOT NULL,
 	  
 	  
-	  TargetLevelkey  tinyint NOT NULL,
+	  TargetLevelkey  int NOT NULL,
 	  EmpTypeKey tinyint NOT NULL, 
 	  EmployeeKey int NOT NULL,
 	  BrancheKey tinyint NOT NULL, 
