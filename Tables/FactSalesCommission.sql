@@ -12,13 +12,13 @@
 	  TargetDateAlternativeKey int NOT NULL,
 	  
 	  TargetDateKey  date NOT NULL, 
-	  CountSo int NOT NULL, 
+	  
 	  Precent decimal(28,12) NOT NULL, 
 	  AmountFrom decimal(28,12) NOT NULL ,  
 	  AmountTo decimal(28,12) NOT NULL, 
       Amount decimal(28,12) NOT NULL,
       TotalSales decimal(28,12) NOT NULL,
-
+	  CountSo int NOT NULL, 
 	--Trace
 		IsDeleted bit DEFAULT 0 NOT NULL,
 		LastupdateDate datetime DEFAULT getDate()
