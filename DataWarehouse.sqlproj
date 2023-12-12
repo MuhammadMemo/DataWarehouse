@@ -106,6 +106,7 @@
     <Build Include="Tables\DimTermsDelivery.sql" />
     <Build Include="Tables\DimFixTradType.sql" />
     <Build Include="Tables\FactSalesTrade.sql" />
+    <Build Include="Tables\DimEmpType.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataWarehouse.publish.xml" />
