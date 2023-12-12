@@ -15,6 +15,7 @@ isnull(c.USER_,0) as EmpKeySource,isnull(c.AMOUNT,0) as AmountSource,isnull(c.CO
 from SalesTarget t left join SalesCommission c on t.RECID=c.ID_LEVEL and t.DATAAREAID=c.DATAAREAID
 where c.COUNT is not null 
 --and c.RECID <>5637145331
+--
 
 
 select * from _DWFactSalesCommission where SalesCommissionAlternativeKeySource =5637145331
