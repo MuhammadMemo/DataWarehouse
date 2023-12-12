@@ -124,6 +124,7 @@
     <None Include="Script\Create DWPaymentMethods.sql" />
     <None Include="Script\Create _DWMethodAcquisition.sql" />
     <None Include="Script\Create_DWDlvMode.sql" />
+    <None Include="Script\Create_DWTargetLevels.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DataWarehouse.refactorlog" />
