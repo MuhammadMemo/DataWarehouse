@@ -128,6 +128,7 @@
     <None Include="Script\MethodAcquisition.sql" />
     <None Include="Script\DlvMode.sql" />
     <None Include="Script\TargetLevels.sql" />
+    <None Include="Script\Script1.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DataWarehouse.refactorlog" />

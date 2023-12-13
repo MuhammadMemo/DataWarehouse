@@ -1,4 +1,6 @@
-﻿alter view  _DWFactSales as 
+﻿
+
+alter view  _DWFactSales as 
 --
 SELECT     
 --top(100)
@@ -40,33 +42,32 @@ SELECT
                          
                        isnull((select sum(AmountCurCredit) from LedgerJournalTrans t  where t.SALESID=s.SALESID and   t.DATAAREAID=s.DATAAREAID) / (select count(*) from salesline i where i.SALESID=s.SALESID and   i.DATAAREAID=s.DATAAREAID ) ,0) as PaymentSource,
 
-                       DATEADD(HOUR, 2,s.MODIFIEDDATETIME) as MODIFIEDDATETIME,
+                      s.MODIFIEDDATETIME ,
                        0 as IsDeleted
 FROM            dbo.SALESLINE AS s LEFT OUTER JOIN dbo.SALESTABLE AS B 
                 ON s.SALESID = B.SALESID AND s.DATAAREAID = B.DATAAREAID
                          
 WHERE        (s.SHIPPINGDATEREQUESTED >= CONVERT(datetime, '2013-01-01 00:00:00.000', 102))
-AND (S.SALESGROUP IN ('01', '02', '03', '04', '05', '06', '07','12','13', '25', '35','45','08'))
-AND (S.SALESID LIKE '0008%'
-OR S.SALESID LIKE '01%'
+--AND (S.SALESGROUP IN ('01', '02', '03', '04', '05', '06', '07','12','13', '25', '35','45','08'))
+AND (S.SALESID LIKE '01%'
 OR S.SALESID LIKE '02%'
 OR S.SALESID LIKE '03%'
 OR S.SALESID LIKE '04%'
 OR S.SALESID LIKE '06%'
 OR S.SALESID LIKE '07%'
 OR S.SALESID LIKE '08%'
-
-OR S.SALESID LIKE '1%'
-OR S.SALESID LIKE '2%'
-OR S.SALESID LIKE '3%'
-OR S.SALESID LIKE '4%'
-OR S.SALESID LIKE '6%'
-OR S.SALESID LIKE '7%'
-OR S.SALESID LIKE '8%'
-OR S.SALESID LIKE '003%'
+OR S.SALESID LIKE '00%'
+OR S.SALESID LIKE '10%'
+--OR S.SALESID LIKE '2%'
+--OR S.SALESID LIKE '3%'
+--OR S.SALESID LIKE '4%'
+--OR S.SALESID LIKE '6%'
+--OR S.SALESID LIKE '7%'
+--OR S.SALESID LIKE '8%'
+--OR S.SALESID LIKE '003%'
 )
 AND (S.SALESSTATUS <> 4 and b.SALESTYPE = 3 ) 
-and s.SALESPRICE <> 0
+--and s.SALESPRICE <> 0
 --and  dbo.GetTaxSalesSO(S.LINEAMOUNT, S.TAXGROUP)>0  
 and s.ITEMID not like '8%'
 --UnitPriceSource
