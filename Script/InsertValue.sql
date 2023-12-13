@@ -79,6 +79,8 @@ INSERT [dbo].[DimGendr]   ([GendrKey], [GendrName]) VALUES (2, N'Female')
 go
 INSERT    [dbo].[DimEmpType]  ([TypeKey], [TypeName] ) VALUES (0, N'Employee')
 INSERT    [dbo].[DimEmpType]   ([TypeKey], [TypeName]) VALUES (1, N'Manager')
+INSERT    [dbo].[DimEmpType]   ([TypeKey], [TypeName]) VALUES (2, N'Kitchen')
+
 
 
 --INSERT INTO [dbo].[DimEmployee]
