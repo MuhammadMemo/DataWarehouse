@@ -12,5 +12,6 @@
 	[Status] nvarchar (30) not null,
 	[StartPakage] [datetime] NULL,
 	[ModifiedDate] [datetime] NULL,
-	[ScondsDiff]  AS (datediff(minute,[StartPakage],[ModifiedDate]))
+	[SecondDiff]  AS (datediff(second,[StartPakage],[ModifiedDate])),
+	[MinuteDiff]  AS (datediff(minute,[StartPakage],[ModifiedDate]))
 	)
