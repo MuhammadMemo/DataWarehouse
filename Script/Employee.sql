@@ -5,20 +5,20 @@ left join 	  DirPartyTable	   d	 on e.PARTYID=d.PARTYID		  and e.DATAAREAID=d.DA
 where d.name is not null
 
 
-UPDATE [dbo].[DimEmployee]
-   SET 
+--UPDATE [dbo].[DimEmployee]
+--   SET 
    
-      [EmployeeName] =?
-      ,[Job] = ?
-      ,[DepartmenName] = ?
-      ,[DivisionName] = ?
-      ,[Gender] =?
-      ,[ContractType] = ?
-      ,[ContractDate] = ?
-      ,[ContractEndDate] = ?
-      ,[BirthDate] = ?
-      ,[HireDate] = ?
-      ,[InsuranceDate] = ?
-      ,[WorkeStatus] = ?
+--      [EmployeeName] =?
+--      ,[Job] = ?
+--      ,[DepartmenName] = ?
+--      ,[DivisionName] = ?
+--      ,[Gender] =?
+--      ,[ContractType] = ?
+--      ,[ContractDate] = ?
+--      ,[ContractEndDate] = ?
+--      ,[BirthDate] = ?
+--      ,[HireDate] = ?
+--      ,[InsuranceDate] = ?
+--      ,[WorkeStatus] = ?
 
- WHERE     [EmployeeAlternativeKey] = ? and  [CompanyKey] =?
+-- WHERE     [EmployeeAlternativeKey] = ? and  [CompanyKey] =?
