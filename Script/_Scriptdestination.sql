@@ -7,6 +7,8 @@ select sum(ScondsDiff) from 	 [dbo].[LogTable]	   where 	  [Batch]	in (select ma
 
 select count(*) from  FactSales	  where IsDeleted=0
 
+
+--truncate table dimemptype
 --truncate table FactSales
 
 --delete  [dbo].[LogTable] where TableNo=20
