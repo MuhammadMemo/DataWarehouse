@@ -7,7 +7,7 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DataWarehouse", "DataWareho
 EndProject
 Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "IntegrationServicesProject", "..\..\03-SSIS\IntegrationServicesProject\IntegrationServicesProject.dtproj", "{ED941FE8-0326-48DC-AFA9-1003FDBA0AB5}"
 EndProject
-Project("{6870E480-7721-4708-BFB8-9AE898AA21B3}") = "TabularProject", "..\TabularProject\TabularProject.smproj", "{8CE414BB-95B2-4C99-9E03-51BA72086E22}"
+Project("{6870E480-7721-4708-BFB8-9AE898AA21B3}") = "TabularProject_Sales", "..\TabularProject\TabularProject_Sales.smproj", "{8CE414BB-95B2-4C99-9E03-51BA72086E22}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
