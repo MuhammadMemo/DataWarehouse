@@ -8,7 +8,8 @@ select * from [dbo].[LogTable] where   Tableno=20
 
 select count(*) from  FactSales	  where IsDeleted=0
 
---delete [dbo].[LogTable] where [Batch] <> 105 and tableNo=20
+--delete [dbo].[LogTable] where [Batch] <> 134
+--and tableNo=20
 
 
 select  SalesOrderNumber ,LastupdateDate from   FactSales
