@@ -62,6 +62,49 @@ GO
 --truncate table [dbo].[DimDate]
 --Value of Start Date Must be Less than Your End Date 
 
+--CREATE TABLE [dbo].[DimDate](
+--	[DateKey] [int] NOT NULL,
+--	[Date] [datetime] NULL,
+--	[FullDate] [char](10) NULL,
+--	[DayOfMonth] [tinyint] NULL,
+--	[DaySuffix] [varchar](4) NULL,
+--	[DayName] [varchar](9) NULL,
+--	[DayOfWeek] [tinyint] NULL,
+--	[DayOfWeekInMonth] [smallint] NULL,
+--	[DayOfWeekInYear] [smallint] NULL,
+--	[DayOfQuarter] [smallint] NULL,
+--	[DayOfYear] [smallint] NULL,
+--	[WeekOfMonth] [smallint] NULL,
+--	[WeekOfQuarter] [smallint] NULL,
+--	[WeekOfYear] [smallint] NULL,
+--	[Month] [tinyint] NULL,
+--	[MonthName] [nvarchar](20) NULL,
+--	[MonthOfQuarter] [varchar](2) NULL,
+--	[Quarter] [tinyint] NULL,
+--	[QuarterName] [nvarchar](20) NULL,
+--	[Year] [smallint] NULL,
+--	[YearName] [char](7) NULL,
+--	[MonthYear] [char](10) NULL,
+--	[MMYYYY] [char](6) NULL,
+--	[FirstDayOfMonth] [date] NULL,
+--	[LastDayOfMonth] [date] NULL,
+--	[FirstDayOfQuarter] [date] NULL,
+--	[LastDayOfQuarter] [date] NULL,
+--	[FirstDayOfYear] [date] NULL,
+--	[LastDayOfYear] [date] NULL,
+--	[Season] [nvarchar](50) NULL,
+--	[Semester] [nvarchar](50) NULL,
+--	[IsHoliday] [bit] NULL,
+--	[HolidayName] [nvarchar](50) NULL,
+-- CONSTRAINT [PK__DimDate__40DF45E3C1A7FFAC] PRIMARY KEY CLUSTERED 
+--(
+--	[DateKey] ASC
+--)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+--) ON [PRIMARY]
+--GO
+
+
+
 
 INSERT [dbo].[DimDate] ([DateKey], [Date], [FullDate], [DayOfMonth], [DaySuffix], [DayName], [DayOfWeek], [DayOfWeekInMonth], [DayOfWeekInYear], [DayOfQuarter], [DayOfYear], [WeekOfMonth], [WeekOfQuarter], [WeekOfYear], [Month], [MonthName], [MonthOfQuarter], [Quarter], [QuarterName], [Year], [YearName], [MonthYear], [MMYYYY], [FirstDayOfMonth], [LastDayOfMonth], [FirstDayOfQuarter], [LastDayOfQuarter], [FirstDayOfYear], [LastDayOfYear], [Season], [Semester], [IsHoliday], [HolidayName]) VALUES 
 (19000101, CAST(N'1900-01-01T00:00:00.000' AS DateTime), N'01/01/1900', N'1', N'1st', N'Sunday', N'1', N'1', N'1', N'1', N'1', N'1', N'1', N'1', N'1', N'January', N'1', N'1', N'Quarter 1', N'2012', N'CY 1900', N'Jan-1900  ', N'012012', CAST(N'1900-01-01' AS Date), CAST(N'1900-01-31' AS Date), CAST(N'1900-01-01' AS Date), CAST(N'1900-01-01' AS Date), CAST(N'1900-01-01' AS Date), CAST(N'1900-01-01' AS Date), N'Summer Season:From September To February', N'First Semester:From January To June', NULL, N'0')

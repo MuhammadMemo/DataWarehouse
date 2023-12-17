@@ -1,9 +1,9 @@
 ﻿
 
-alter view  _DWFactSales as 
+--alter view  _DWFactSales as 
 --
 SELECT     
---top(100)
+top(100)
                          s.INVENTTRANSID AS InventTranceKey, s.DATAAREAID AS CompanyKeySource, s.ITEMID AS ProductKeySource, s.SALESGROUP AS BrancheKeySource,
                          s.CUSTACCOUNT AS CustomerKeySource, s.INVENTDIMID AS DimensionKeySource, s.SALESSTATUS AS StatusKeySource, s.SALESTYPE AS TypeKeySource,
                         
@@ -33,9 +33,9 @@ SELECT
                         isnull( CONVERT(date, s.RECEIPTDATECONFIRMED),'1900-01-01') AS ShippingDateSource,
 
                          s.SALESID AS SalesOrderNumber, s.LINENUM AS SalesOrderLineNumberSource, 
-
                          s.SALESPRICE AS UnitPriceSource, s.SALESQTY as SALESQTYSource,
-                         s.LINEPERCENT AS DiscountPercentSource, s.LINEDISC AS DiscountAmountSource, s.LINEPERCENT AS LinePercentDiscountSource, s.LineAmount as LineAmountSource,
+                         s.LINEPERCENT AS DiscountPercentSource, s.LINEDISC AS DiscountAmountSource,
+                         s.LINEPERCENT AS LinePercentDiscountSource, s.LineAmount as LineAmountSource,
                         
                          dbo.GetTaxSalesSO(s.LINEAMOUNT, s.TAXGROUP) AS AmountAfterTaxSource, 
                          dbo.GetTaxSalesSO(s.LINEAMOUNT, s.TAXGROUP) - s.LINEAMOUNT AS TaxAmountSource,
