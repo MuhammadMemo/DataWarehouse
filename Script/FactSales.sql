@@ -73,3 +73,11 @@ and s.ITEMID not like '8%'
 --UnitPriceSource
 --0.000000000000
 --and s.salesid='06115599_SO'
+
+--delete [dbo].[FactSales] WHERE   [InventTranceKey] =?	    and [CompanyKey] = ?
+
+--UPDATE 
+--   SET 
+--      [IsDeleted] =1
+
+--

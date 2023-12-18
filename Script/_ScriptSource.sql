@@ -13,12 +13,27 @@ order by 	  left(SALESID,2)
 --delete	 SALESline  where salesid like'05%' 
 	 --count(*),
 select  SALESID,  SHIPPINGDATEREQUESTED,DATAAREAID from  SALESTABLE	
-where SALESID like '00%'  and    ( SHIPPINGDATEREQUESTED = CONVERT(datetime, '2023-12-17 00:00:00.000', 102))
+where SALESID like '00%'  and    ( SHIPPINGDATEREQUESTED = CONVERT(datetime, '2023-12-16 00:00:00.000', 102))
 and SALESGROUP <>'07'		and SALESSTATUS <> 4
 order by  SALESID, SHIPPINGDATEREQUESTED
 
-
-select  SalesOrderNumber,MODIFIEDDATETIME from  _DWFactSales
+--distinct
+select  SalesOrderNumber,sum(AmountAfterTaxSource) from  _DWFactSales
 where    ( OrderDateSource = CONVERT(datetime, '2023-12-17 00:00:00.000', 102))
-order by MODIFIEDDATETIME
+group by SalesOrderNumber
+--order by MODIFIEDDATETIME
+
+select  * from  _DWFactSales
+where    ( OrderDateSource = CONVERT(datetime, '2023-12-18 00:00:00.000', 102)) 
+order by InventTranceKey
+
+
+select  sum(PaymentSource),AmountAfterTaxSource from  _DWFactSales
+where    ( OrderDateSource = CONVERT(datetime, '2023-12-18 00:00:00.000', 102)) and SalesOrderNumber='10004397_SO'
+--order by InventTranceKey
+
+
+PaymentSource
+44460.000000000000
+
 
