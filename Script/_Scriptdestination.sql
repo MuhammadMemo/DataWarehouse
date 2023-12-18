@@ -1,12 +1,17 @@
 ﻿select * from [dbo].[LogTable] where [Batch] in(select max([Batch]) from [dbo].[LogTable]) 
 
-select SUM(SecondDiff)as SecondDiff ,sum(MinuteDiff)  as MinuteDiff from [dbo].[LogTable] where [Batch]	in (select max([Batch]) from [dbo].[LogTable]) 
+--select SUM(SecondDiff)as SecondDiff ,sum(MinuteDiff)  as MinuteDiff from [dbo].[LogTable] where [Batch]	in (select max([Batch]) from [dbo].[LogTable]) 
 
-select [Batch],SUM(SecondDiff)as SecondDiff ,sum(MinuteDiff)  as MinuteDiff from [dbo].[LogTable] group by [Batch]
+select  [Batch],sum(IsInserted)IsInserted, sum(IsUpdated)IsUpdated,  sum(IsDeleted)IsDeleted,SUM(SecondDiff)as SecondDiff ,sum(MinuteDiff)MinuteDiff ,max(ModifiedDate) as MinuteDiff from [dbo].[LogTable]   group by [Batch] order by [Batch] desc
 
 
 select sum(ScondsDiff) from 	 [dbo].[LogTable]	   where 	  [Batch]	in (select max([Batch])   from 	 [dbo].[LogTable]	)
 
+
+
+0
+238
+0
 
 select count(*) from [dbo].[LogTable]
 
