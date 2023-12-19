@@ -9,18 +9,14 @@ select sum(ScondsDiff) from 	 [dbo].[LogTable]	   where 	  [Batch]	in (select ma
 
 
 
-0
-238
-0
-
 select count(*) from [dbo].[LogTable]
 
 select * from [dbo].[LogTable] where   Tableno=20
 
 select count(*) from  FactSales	  where IsDeleted=0
 
---delete [dbo].[LogTable] where [Batch] <> 135
---and tableNo=20
+--delete [dbo].[LogTable] where   tableNo=20
+--
 
 
 select distinct( SalesOrderNumber)   from   FactSales
