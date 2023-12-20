@@ -33,7 +33,4 @@ where    ( OrderDateSource = CONVERT(datetime, '2023-12-18 00:00:00.000', 102)) 
 --order by InventTranceKey
 
 
-PaymentSource
-44460.000000000000
-
 

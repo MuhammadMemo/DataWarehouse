@@ -42,7 +42,8 @@ TaxAmount NUMERIC(28, 12) NOT NULL,
 Payment NUMERIC(28, 12) Default 0, 
 --Trace
 IsDeleted bit DEFAULT 0 NOT NULL,
-LastupdateDate datetime DEFAULT getDate()
+LastupdateDate datetime DEFAULT getDate(),
+CreateDateTime datetime
     CONSTRAINT [PK_FactSales] PRIMARY KEY (CompanyKey,InventTranceKey) ,
     
     CONSTRAINT [PF_Branche] FOREIGN KEY  (BrancheKey,CompanyKey) REFERENCES DimBranche(BrancheKey,CompanyKey),
