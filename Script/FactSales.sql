@@ -1,11 +1,11 @@
 ﻿
 
-alter view  _DWFactSales as 
+--alter view  _DWFactSales as 
 --
 SELECT     
---top(100)
+top(100)
                          s.INVENTTRANSID AS InventTranceKey, s.DATAAREAID AS CompanyKeySource, s.ITEMID AS ProductKeySource, s.SALESGROUP AS BrancheKeySource,
-                         s.CUSTACCOUNT AS CustomerKeySource, s.INVENTDIMID AS DimensionKeySource, s.SALESSTATUS AS StatusKeySource, s.SALESTYPE AS TypeKeySource,
+                         s.CUSTACCOUNT AS CustomerKeySource, s.INVENTDIMID AS DimensionKeySource, s.SALESSTATUS AS StatusKeySource, b.SALESSTATUS AS StatusOrderKeySource, b.SALESTYPE AS TypeKeySource,
                         
                          --isnull(b.TradRemndType,0) as TradTypeKeySource,isnull(b.NoteSOTrad ,' ') as  NoteTradSource,
 
@@ -41,7 +41,7 @@ SELECT
                          dbo.GetTaxSalesSO(s.LINEAMOUNT, s.TAXGROUP) - s.LINEAMOUNT AS TaxAmountSource,
                          
                        isnull((select sum(AmountCurCredit) from LedgerJournalTrans t  where t.SALESID=s.SALESID and   t.DATAAREAID=s.DATAAREAID) / (select count(*) from salesline i where i.SALESID=s.SALESID and   i.DATAAREAID=s.DATAAREAID ) ,0) as PaymentSource,
-                        DATEADD("HOUR",4 ,s.MODIFIEDDATETIME)as  MODIFIEDDATETIME , 0 as IsDeleted
+                        DATEADD("HOUR",4 ,s.MODIFIEDDATETIME)as  MODIFIEDDATETIME ,s.CreatedDateTime, 0 as IsDeleted
                     
                       
 FROM            dbo.SALESLINE AS s LEFT OUTER JOIN dbo.SALESTABLE AS B 

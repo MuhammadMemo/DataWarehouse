@@ -130,6 +130,7 @@
     <None Include="Script\TargetLevels.sql" />
     <None Include="Script\_ScriptDestination.sql" />
     <None Include="Script\_ScriptSource.sql" />
+    <None Include="Script\FactSalesOrder.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DataWarehouse.refactorlog" />

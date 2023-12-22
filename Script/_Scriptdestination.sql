@@ -7,17 +7,17 @@ select  [Batch],sum(IsInserted)IsInserted, sum(IsUpdated)IsUpdated,  sum(IsDelet
 
 select sum(ScondsDiff) from 	 [dbo].[LogTable]	   where 	  [Batch]	in (select max([Batch])   from 	 [dbo].[LogTable]	)
 
-
+select count(*) from  FactSales	  where IsDeleted=0
 
 select count(*) from [dbo].[LogTable]
 
 select * from [dbo].[LogTable] where   Tableno=20
 
-select count(*) from  FactSales	  where IsDeleted=0
 
+--truncate table FactSales
 --delete [dbo].[LogTable] where   tableNo=20
---
 
+--update LogTable set StartPakage	='2023-12-10 11:35:32.000' ,ModifiedDate ='2023-12-10 11:35:32.230'
 
 select distinct( SalesOrderNumber)   from   FactSales
 where    ( OrderDate = CONVERT(datetime, '2023-12-16 00:00:00.000', 102))
@@ -35,12 +35,12 @@ select  SalesOrderNumber,sum(AmountAfterTax) from  FactSales
 where    ( OrderDate = CONVERT(datetime, '2023-12-17 00:00:00.000', 102))
 group by SalesOrderNumber
 
---update LogTable set StartPakage	='2023-12-10 11:35:32.000' ,ModifiedDate ='2023-12-10 11:35:32.230'
+
 
 	
 
 
 --truncate table dimemptype
---truncate table FactSales
+
 
 --delete  [dbo].[LogTable] where TableNo=20
