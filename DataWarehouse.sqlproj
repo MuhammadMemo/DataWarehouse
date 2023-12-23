@@ -109,6 +109,8 @@
     <Build Include="Tables\DimEmpType.sql" />
     <Build Include="Tables\FactSalesCommission.sql" />
     <Build Include="Tables\DimTargetLevel.sql" />
+    <Build Include="Tables\DimAccountCategory.sql" />
+    <None Include="Script\FactLedgerTrans.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataWarehouse.publish.xml" />
