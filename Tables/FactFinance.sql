@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[FactFinance]
 (
-	Id bigINT NOT NULL PRIMARY KEY,
+	Id bigINT NOT NULL ,
 
 	CompanyKey tinyint not null,
 	AccountKey int not null,
@@ -10,8 +10,8 @@
 	FinancialDate date not null,
 	Amount numeric(18, 0) not null,
 
-	LastupdateDate datetime not null,
-
+	LastupdateDate datetime DEFAULT getDate(),
+	CONSTRAINT [PK_FactFinance] PRIMARY KEY (CompanyKey,id),
 	CONSTRAINT [PF_FinCompany] FOREIGN KEY (CompanyKey) REFERENCES DimCompany(CompanyKey),
 	CONSTRAINT [PF_FinDate] FOREIGN KEY (FinancialDateAlternativeKey) REFERENCES DimDate(DateKey),
 	CONSTRAINT [PF_FinAccount] FOREIGN KEY (AccountKey,CompanyKey) REFERENCES DimAccount(AccountKey,CompanyKey),

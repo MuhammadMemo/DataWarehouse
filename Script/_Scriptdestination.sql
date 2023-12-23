@@ -16,6 +16,7 @@ select * from [dbo].[LogTable] where   Tableno=20
 
 --truncate table FactSales
 
+--truncate table FactFinance
 --truncate table  DimAccount
 --delete [dbo].[LogTable] where   tableNo=5
 
