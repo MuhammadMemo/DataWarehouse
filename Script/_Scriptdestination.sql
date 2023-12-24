@@ -18,7 +18,7 @@ select * from [dbo].[LogTable] where   Tableno=22
 
 --truncate table FactFinance
 --truncate table  DimAccount
---delete [dbo].[LogTable] where   tableNo=22
+--delete [dbo].[LogTable] where   tableNo=5
 
 --update LogTable set StartPakage	='2023-12-10 11:35:32.000' ,ModifiedDate ='2023-12-10 11:35:32.230'
 

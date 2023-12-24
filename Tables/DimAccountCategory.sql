@@ -5,6 +5,7 @@
     AccountCategoryAlternativeKey int NOT NULL,
 	AccountCategoryName nvarchar (60) not null ,
 	DescriptionGroup nvarchar (150)  null ,
+	[SortGroup] [int] NULL,
 	UpdatLasteTime datetime default getdate(),
 
 CONSTRAINT [PK_DimAccountCategory_1] PRIMARY KEY CLUSTERED 
