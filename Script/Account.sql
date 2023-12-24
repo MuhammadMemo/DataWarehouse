@@ -23,3 +23,9 @@ FROM            dbo.LEDGERTABLE
 --      ,[DescriptionGroup] =?
 -- WHERE  ,[AccountCategoryAlternativeKey] = ? and	[CompanyKey] = ?
  
+
+
+--  SELECT     distinct(Posting)  ,max(VOUCHER)
+--FROM            dbo.LEDGERTRANS	 
+--	 group by 	 Posting
+--		 order by  Posting

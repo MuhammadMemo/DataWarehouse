@@ -111,6 +111,7 @@
     <Build Include="Tables\DimTargetLevel.sql" />
     <Build Include="Tables\DimAccountCategory.sql" />
     <None Include="Script\FactLedgerTrans.sql" />
+    <Build Include="Tables\DimFixFinPostingType.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataWarehouse.publish.xml" />

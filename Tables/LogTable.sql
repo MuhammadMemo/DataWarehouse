@@ -5,6 +5,7 @@
 	[Pakage] [nvarchar](50) NULL,
 	[MachineName] [nvarchar](50) NULL,
 	[TableName] [nvarchar](50) NULL,
+	[IsSelect] [int] NULL,
 	[IsInserted] [int] NULL,
 	[IsUpdated] [int] NULL,
 	[IsDeleted] [int] NULL,
