@@ -11,14 +11,14 @@ select count(*) from  FactSales	  where IsDeleted=0
 
 select count(*) from [dbo].[LogTable]
 
-select * from [dbo].[LogTable] where   Tableno=5
+select * from [dbo].[LogTable] where   Tableno=22
 
 
 --truncate table FactSales
 
 --truncate table FactFinance
 --truncate table  DimAccount
---delete [dbo].[LogTable] where   tableNo=5
+--delete [dbo].[LogTable] where   tableNo=22
 
 --update LogTable set StartPakage	='2023-12-10 11:35:32.000' ,ModifiedDate ='2023-12-10 11:35:32.230'
 
