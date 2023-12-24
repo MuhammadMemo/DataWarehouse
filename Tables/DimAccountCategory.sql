@@ -2,8 +2,9 @@
 (
 	CompanyKey tinyint not null,
 	AccountCategoryKey int  identity (1,1)  not null  ,
-    AccountCategoryAlternativeKey nvarchar(30) NOT NULL,
+    AccountCategoryAlternativeKey int NOT NULL,
 	AccountCategoryName nvarchar (60) not null ,
+	DescriptionGroup nvarchar (150)  null ,
 	UpdatLasteTime datetime default getdate(),
 
 CONSTRAINT [PK_DimAccountCategory_1] PRIMARY KEY CLUSTERED 

@@ -5,11 +5,8 @@
     AccountAlternativeKey nvarchar(30) NOT NULL,
 	AccountName nvarchar (60) not null ,
 	AccountType  tinyint  not null,
-	AccountGroup nvarchar (150)   null ,
+	AccountGroup int  null ,
 	UpdatLasteTime datetime default getdate(),
 
-CONSTRAINT [PK_DimAccount_1] PRIMARY KEY CLUSTERED 
-(
-	AccountKey ASC,
-    CompanyKey ASC)
-)ON [PRIMARY]
+CONSTRAINT [PK_DimAccount_1] PRIMARY KEY CLUSTERED (AccountKey ,CompanyKey))
+--CONSTRAINT [PF_AccountGroup] FOREIGN KEY (CompanyKey,AccountGroup) REFERENCES DimAccountCategory(CompanyKey,AccountCategoryKey))

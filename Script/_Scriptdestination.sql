@@ -5,13 +5,13 @@
 select  [Batch],sum(IsInserted)IsInserted, sum(IsUpdated)IsUpdated,  sum(IsDeleted)IsDeleted,SUM(SecondDiff)as SecondDiff ,sum(MinuteDiff)MinuteDiff ,max(ModifiedDate) as MinuteDiff from [dbo].[LogTable]   group by [Batch] order by [Batch] desc
 
 
-select sum(ScondsDiff) from 	 [dbo].[LogTable]	   where 	  [Batch]	in (select max([Batch])   from 	 [dbo].[LogTable]	)
+select sum(SecondDiff),sum(MinuteDiff)MinuteDiff from 	 [dbo].[LogTable]	   where 	  [Batch]	in (select max([Batch])   from 	 [dbo].[LogTable]	)
 
 select count(*) from  FactSales	  where IsDeleted=0
 
 select count(*) from [dbo].[LogTable]
 
-select * from [dbo].[LogTable] where   Tableno=20
+select * from [dbo].[LogTable] where   Tableno=5
 
 
 --truncate table FactSales
