@@ -134,6 +134,7 @@
     <None Include="Script\_ScriptDestination.sql" />
     <None Include="Script\_ScriptSource.sql" />
     <None Include="Script\FactSalesOrder.sql" />
+    <None Include="Script\Bank.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DataWarehouse.refactorlog" />
