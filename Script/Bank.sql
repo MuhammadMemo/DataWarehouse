@@ -3,9 +3,12 @@
 
 alter view _DWBank as 
 
-select   b.ACCOUNTID as BankAlternativeKey ,b.LEDGERACCOUNT as  AccountKey ,g.NAME as BankGroupName ,b.SALESGROUP as BrancheKey,
+select   b.ACCOUNTID as BankAlternativeKey ,b.LEDGERACCOUNT as  AccountKey ,g.NAME as BankGroupName 
+,case when b.SALESGROUP  ='' then 'None' else b.SALESGROUP end as BrancheKey,
 b.CurrencyCode,b.NAME as BnakName ,b.DATAAREAID as CompanyName   from  BANKACCOUNTTABLE b left join BankGroup g on b.BankGroupID=g.BankGroupID  and b.DATAAREAID=g.DATAAREAID
-  select * from _DWBank
+ 
+ 
+ select * from _DWBank where  BrancheKey is null
 
 
    alter view  _DWFactBank  as
@@ -18,6 +21,7 @@ t.accountnum as AccountNum,
 t.Amountcurdebit as AmountDebit,
 t.amountcurcredit as AmountCredit,
 t.txt,
+t.AccountType,
 t.OffsetAccountType,
 t.OffsetAccount,
 t.salesid,
