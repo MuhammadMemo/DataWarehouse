@@ -8,5 +8,6 @@
 	AccountGroup int  null ,
 	UpdatLasteTime datetime default getdate(),
 
-CONSTRAINT [PK_DimAccount_1] PRIMARY KEY CLUSTERED (AccountKey ,CompanyKey))
---CONSTRAINT [PF_AccountGroup] FOREIGN KEY (CompanyKey,AccountGroup) REFERENCES DimAccountCategory(CompanyKey,AccountCategoryKey))
+CONSTRAINT [PK_DimAccount_1] PRIMARY KEY CLUSTERED (AccountKey ,CompanyKey),
+--CONSTRAINT [PF_AccountGroup_1] FOREIGN KEY (CompanyKey,AccountGroup) REFERENCES DimAccountCategory(CompanyKey,AccountCategoryKey)
+)

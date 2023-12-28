@@ -114,7 +114,7 @@
     <Build Include="Tables\DimFixFinPostingType.sql" />
     <Build Include="Tables\DimFixFinOffsetAccountType.sql" />
     <Build Include="Tables\DimBank.sql" />
-    <Build Include="Tables\FactBankCustomer.sql" />
+    <Build Include="Tables\FactBank.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataWarehouse.publish.xml" />
