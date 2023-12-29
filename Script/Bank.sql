@@ -30,7 +30,7 @@ t.dataareaid  as CompanyName  ,
  DATEADD(Hour, 2, T.MODIFIEDDATETIME) AS MODIFIEDDATETIME
 FROM           
  dbo.LEDGERJOURNALTRANS AS T
-WHERE      t.offsetaccounttype in(0,1,2,6)
+WHERE      t.offsetaccounttype in(0,1,2,6) and t.AccountType in (0,1,2,6)
 ----(T.DATAAREAID = 'MFCO') 
 ----and 	t.TRANSDATE =convert (datetime,'2023-12-24 00:00:00.000',102)
 
