@@ -32,6 +32,9 @@ INSERT [dbo].DimFixFinOffsetAccountType ([OffsetAccountTypeKey], [OffsetAccountT
 INSERT [dbo].DimFixFinOffsetAccountType ([OffsetAccountTypeKey], [OffsetAccountTypeName]) VALUES (7, N'DEL_CostAcc')
 
 
+INSERT INTO [dbo].[DimAccountCategory]([CompanyKey],[AccountCategoryAlternativeKey],[AccountCategoryName],[DescriptionGroup],[SortGroup])VALUES(3,0,'UnKown','UnKown',0)
+INSERT INTO [dbo].[DimAccountCategory]([CompanyKey],[AccountCategoryAlternativeKey],[AccountCategoryName],[DescriptionGroup],[SortGroup])VALUES(4,0,'UnKown','UnKown',0)
+
 
 
 INSERT [dbo].[DimFixFinPostingType] ([PostingTypeKey], [PostingTypeName]) VALUES (0,N'None')
