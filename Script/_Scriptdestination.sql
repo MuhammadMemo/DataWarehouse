@@ -14,7 +14,7 @@ select count(*) from [dbo].[LogTable]
 select * from [dbo].[LogTable] where   Tableno=32
 
 
---truncate table FactSales
+--truncate table DimProduct
 
 truncate table FactFinance
 --truncate table  DimAccount
