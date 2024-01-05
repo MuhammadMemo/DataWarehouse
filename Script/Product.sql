@@ -1,5 +1,5 @@
 ﻿
-ALTER view [dbo].[_DWProducts]  as
+--ALTER view [dbo].[_DWProducts]  as
 SELECT        t.ITEMID AS ProductsAlternativeKey, t.ITEMNAME AS ProductName, t.DATAAREAID, g.NAME AS Category, 
                     p.Name as SubCategory, 
                    case when  p.Status =0 then N'في التشغيل' when  p.Status =1 then N'تحت الإلغاء' when  p.Status =2 then N'ملغاه'  end as  StatusCategory,
@@ -35,7 +35,7 @@ FROM            dbo.INVENTTABLE AS t LEFT OUTER JOIN
                          --LEFT OUTER JOIN dbo.IntrastatItemCode AS s ON t.Intracode = s.ParentItemCode AND t.DATAAREAID = s.DATAAREAID
                           LEFT OUTER JOIN  Dimensions as d ON d.Num = t.DIMENSION2_ AND d.DATAAREAID = t.DATAAREAID and d.DimensionCode=1
 
-                        --where t.itemid='60-40-71-602'
+                        where t.itemid='60-40-71-602'
 
 
                          
