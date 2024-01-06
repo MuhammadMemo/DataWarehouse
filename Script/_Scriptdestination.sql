@@ -13,12 +13,21 @@ select count(*) from [dbo].[LogTable]
 
 select * from [dbo].[LogTable] where   Tableno=32
 
+--truncate table dimemptype
 
 --truncate table DimProduct
 
-truncate table FactFinance
---truncate table  DimAccount
---delete [dbo].[LogTable] where   tableNo=32 and batch<>352
+--truncate table FactFinance
+
+--truncate table FactBank
+
+--truncate table DimBank
+
+----truncate table  DimAccount
+
+--delete [dbo].[LogTable] where   tableName in ('FactBank','DimBank')
+
+--delete [dbo].[LogTable] where   [Batch] in(select max([Batch]) from [dbo].[LogTable]) 
 
 --update LogTable set StartPakage	='2023-12-15 11:35:32.000' ,ModifiedDate ='2023-12-15 11:35:32.230' where batch=352
 
@@ -43,7 +52,7 @@ group by SalesOrderNumber
 	
 
 
---truncate table dimemptype
+
 
 
 --delete  [dbo].[LogTable] where TableNo=20

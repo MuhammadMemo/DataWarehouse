@@ -4,8 +4,8 @@ go
 --INSERT INTO [dbo].[DimCompany] ([CompanyAlternativeKey],[CompanyName]) VALUES ('2','mt')        
 GO
 
-INSERT INTO [dbo].[DimBranche] ([CompanyKey],[BrancheAlternativeKey],[BrancheSort],[BrancheName]) VALUES(3,0, 0 ,'None' )
-INSERT INTO [dbo].[DimBranche] ([CompanyKey],[BrancheAlternativeKey],[BrancheSort],[BrancheName]) VALUES(4,0, 0 ,'None' )
+INSERT INTO [dbo].[DimBranche] ([CompanyKey],[BrancheAlternativeKey],[BrancheSort],[BrancheName]) VALUES(3,'None', 0 ,'None' )
+INSERT INTO [dbo].[DimBranche] ([CompanyKey],[BrancheAlternativeKey],[BrancheSort],[BrancheName]) VALUES(4,'None', 0 ,'None' )
 
 USE [DataWarehouse]
 GO
