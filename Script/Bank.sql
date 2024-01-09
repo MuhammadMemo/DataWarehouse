@@ -3,7 +3,7 @@
 
 --alter view _DWBank as 
 
-select   b.ACCOUNTID as BankAlternativeKey ,b.LEDGERACCOUNT as  AccountKey ,g.NAME as BankGroupName ,c.Name as Branchename
+select   b.ACCOUNTID as BankAlternativeKey ,b.LEDGERACCOUNT as  AccountKey ,g.NAME as BankGroupName ,case when c.Name  is null then 'None' else c.Name end  as Branchename
 ,case when b.SALESGROUP  ='' then 'None' else b.SALESGROUP end as BrancheKey,
 b.CurrencyCode,b.NAME as BnakName ,b.DATAAREAID as CompanyName   from  BANKACCOUNTTABLE b left join BankGroup g 
 on b.BankGroupID=g.BankGroupID  and b.DATAAREAID=g.DATAAREAID
