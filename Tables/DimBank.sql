@@ -7,6 +7,7 @@
 	BnakName nvarchar (150) not null ,
 	BankGroupName nvarchar (100)  null ,
 	BrancheKey tinyint    null,
+	BrancheNmae nvarchar (50)    null,
 	AccountKey  int   null,
 	CurrencyCode  nvarchar (20)  null ,
 	UpdatLasteTime datetime default getdate(),
