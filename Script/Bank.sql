@@ -1,18 +1,24 @@
 ﻿
 
 
---alter view _DWBank as 
+----alter view _DWBank as 
 
-select   b.ACCOUNTID as BankAlternativeKey ,b.LEDGERACCOUNT as  AccountKey ,g.NAME as BankGroupName ,case when c.Name  is null then 'None' else c.Name end  as Branchename
+--select   b.ACCOUNTID as BankAlternativeKey ,b.LEDGERACCOUNT as  AccountKey ,g.NAME as BankGroupName ,case when c.Name  is null then 'None' else c.Name end  as Branchename
+--,case when b.SALESGROUP  ='' then 'None' else b.SALESGROUP end as BrancheKey,
+--b.CurrencyCode,b.NAME as BnakName ,b.DATAAREAID as CompanyName   from  BANKACCOUNTTABLE b left join BankGroup g 
+--on b.BankGroupID=g.BankGroupID  and b.DATAAREAID=g.DATAAREAID
+--left join COMMISSIONSALESGROUP c 
+--on c.GROUPID=b.SALESGROUP  and c.DATAAREAID=b.DATAAREAID
+----where b.ACCOUNTID in(15,27,33,44,64,66,67,68,79)
+--order by  c.Name 
+ 
+
+ alter view _DWBank as 
+
+select   b.ACCOUNTID as BankAlternativeKey ,b.LEDGERACCOUNT as  AccountKey ,g.NAME as BankGroupName
 ,case when b.SALESGROUP  ='' then 'None' else b.SALESGROUP end as BrancheKey,
 b.CurrencyCode,b.NAME as BnakName ,b.DATAAREAID as CompanyName   from  BANKACCOUNTTABLE b left join BankGroup g 
 on b.BankGroupID=g.BankGroupID  and b.DATAAREAID=g.DATAAREAID
-left join COMMISSIONSALESGROUP c 
-on c.GROUPID=b.SALESGROUP  and c.DATAAREAID=b.DATAAREAID
---where b.ACCOUNTID in(15,27,33,44,64,66,67,68,79)
-order by  c.Name 
- 
-
 
 
  select * from _DWBank where  BrancheKey is null
@@ -41,4 +47,4 @@ WHERE      t.offsetaccounttype in(0,1,2,6) and t.AccountType in (0,1,2,6)
 ----(T.DATAAREAID = 'MFCO') 
 ----and 	t.TRANSDATE =convert (datetime,'2023-12-24 00:00:00.000',102)
 
-  select * from _DWFactBank
+  select sum(AmountCredit) from _DWFactBank

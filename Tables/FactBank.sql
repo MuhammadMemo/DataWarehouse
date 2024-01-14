@@ -26,12 +26,12 @@
 	--CONSTRAINT [PF_BankAccount] FOREIGN KEY (AccountKey,CompanyKey) REFERENCES DimAccount(AccountKey,CompanyKey),
 	--CONSTRAINT [PF_BankVendor] FOREIGN KEY (AccountKey,CompanyKey) REFERENCES DimVendor(VendorKey,CompanyKey),
 
-	--CONSTRAINT [PF_BankOffsetAccount_1] FOREIGN KEY (OffsetAccount,CompanyKey) REFERENCES DimBank(BankKey,CompanyKey),
+	CONSTRAINT [PF_BankOffsetAccount_1] FOREIGN KEY (OffsetAccountKey,CompanyKey) REFERENCES DimBank(BankKey,CompanyKey),
 	--CONSTRAINT [PF_BankCustomer_1] FOREIGN KEY (OffsetAccount,CompanyKey) REFERENCES DimCustomer(CustomerKey,CompanyKey),
 	--CONSTRAINT [PF_BankAccount_1] FOREIGN KEY (OffsetAccount,CompanyKey) REFERENCES DimAccount(AccountKey,CompanyKey),
 	--CONSTRAINT [PF_BankVendor_1] FOREIGN KEY (OffsetAccount,CompanyKey) REFERENCES DimVendor(VendorKey,CompanyKey),
 
 	CONSTRAINT [PF_BankOffsetType] FOREIGN KEY (OffsetAccountType) REFERENCES DimFixFinOffsetAccountType(OffsetAccountTypeKey),
-	CONSTRAINT [PF_BankAccountType] FOREIGN KEY (AccountType) REFERENCES DimFixFinOffsetAccountType(OffsetAccountTypeKey),
+	--CONSTRAINT [PF_BankAccountType] FOREIGN KEY (AccountType) REFERENCES DimFixFinOffsetAccountType(OffsetAccountTypeKey),
 
 )
