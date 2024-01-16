@@ -55,3 +55,5 @@ and salesid='03014363_SO'
 
 select count(*) from _DWFactBank
  select count(*) from  FactBank
+
+ 
