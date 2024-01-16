@@ -22,9 +22,12 @@ on b.BankGroupID=g.BankGroupID  and b.DATAAREAID=g.DATAAREAID
 
 
  select * from _DWBank where  BrancheKey is null
+ select * from DimBank
 
 
-   alter view  _DWFactBank  as
+
+
+   --alter view  _DWFactBank  as
 SELECT      t.recid as id,
 t.TransDate as PaymentDate,
  CAST(REPLACE(CONVERT(date, T.TRANSDATE), '-', '') AS int)  as PaymentDateAlternativeKey,
@@ -44,7 +47,11 @@ t.dataareaid  as CompanyName  ,
 FROM           
  dbo.LEDGERJOURNALTRANS AS T
 WHERE      t.offsetaccounttype in(0,1,2,6) and t.AccountType in (0,1,2,6)
+and t.OffsetAccount <>'' and accountnum<>''
+--and t.voucher ='Maadi Cash_043735'
 ----(T.DATAAREAID = 'MFCO') 
-----and 	t.TRANSDATE =convert (datetime,'2023-12-24 00:00:00.000',102)
+--and 	t.TRANSDATE =convert (datetime,'2024-01-15 00:00:00.000',102)
+and salesid='03014363_SO'
 
-  select sum(AmountCredit) from _DWFactBank
+select count(*) from _DWFactBank
+ select count(*) from  FactBank

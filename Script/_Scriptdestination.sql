@@ -20,6 +20,9 @@ select * from [dbo].[LogTable] where   Tableno=32
 --truncate table FactFinance
 
 --truncate table FactBank
+--truncate table Destination
+--truncate table sysssislog
+--delete [dbo].[LogTable] where   tableName in ('FactBank','DimBank')
 
 --truncate table DimBank
 
