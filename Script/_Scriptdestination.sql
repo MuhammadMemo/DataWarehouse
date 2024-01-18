@@ -26,7 +26,7 @@ select * from [dbo].[LogTable] where   Tableno=32
 
 --truncate table DimBank
 
-----truncate table  DimAccount
+--truncate table  DimAccount
 
 --delete [dbo].[LogTable] where   tableName in ('FactBank','DimBank')
 
