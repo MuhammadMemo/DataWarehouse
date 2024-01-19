@@ -28,6 +28,15 @@ select * from [dbo].[LogTable] where   Tableno=32
 
 --truncate table  DimAccount
 
+--truncate table FactSalesCommission
+--truncate table DimEmployee
+--truncate table sysssislog
+--delete [dbo].[LogTable] where   tableName in ('FactSalesCommission','DimEmployee')
+
+
+
+
+
 --delete [dbo].[LogTable] where   tableName in ('FactBank','DimBank')
 
 --delete [dbo].[LogTable] where   [Batch] in(select max([Batch]) from [dbo].[LogTable]) 
