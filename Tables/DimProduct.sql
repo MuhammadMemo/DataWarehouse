@@ -1,23 +1,33 @@
-﻿--DimProducts (Type:Conformed ,Loading:Every Hour,SCD)
-CREATE TABLE [dbo].[DimProduct]
+﻿CREATE TABLE [dbo].[DimProduct]
 (
-CompanyKey tinyint not null,
-ProductKey int not null IDENTITY (1,1) ,
-ProductAlternativeKey nvarchar(50) not null,
-ProductName nvarchar(150) not null,
-Category nvarchar(150) not null,
-SubCategory nvarchar(150)   ,
-StatusCategory nvarchar(50)   ,
-StatusProduct nvarchar(30)   ,
-ProductLine nvarchar(100)   ,
-GroupType nvarchar(50)  NULL,
-SalesPrice MONEY not null Default 0,
-PurchasePrice MONEY not null Default 0, 
-StartDate datetime nOT NULL Default getdate(),
-EndDate datetime,
-[Status] bit Default 0,
-CONSTRAINT [PK_DimProduct_1] PRIMARY KEY CLUSTERED 
+	        CompanyKey tinyint NOT NULL,
+			[ID] [bigint] NOT NULL,
+			ProductKey [int] NOT NULL,
+			[GROUPTYPE] [nvarchar](50) NOT NULL,
+			[CATEGORY] [nvarchar](100) NOT NULL,
+	        [GROUPNAME] [nvarchar](150) NOT NULL,
+		    [SUBCATEGORID] [int] NOT NULL,
+		    [SUBCATEGORNAME] [nvarchar](100) NOT NULL,
+		    [LINEID] [int] NOT NULL,
+			[LINENAME] [nvarchar](30) NOT NULL,
+	        [ProductAlternativeKey] [nvarchar](30) NOT NULL,
+	        [ProductName] [nvarchar](150) NOT NULL,
+	        [CALC] [int] NOT NULL,
+		    [PRICE] [numeric](28, 12) NOT NULL,
+		    [PRICEQTY] [numeric](28, 12) NOT NULL,
+		    [QTY] [int] NOT NULL,
+			[PurchasePrice] MONEY NOT null Default 0, 
+	    	[TOTALPRICE] MONEY NOT NULL,
+			[DISCPERCENT] [numeric](28, 12) NOT NULL,
+		    [DISCAMOUNT] MONEY NOT NULL,
+			[TOTALAFTER] MONEY NOT NULL,
+			[ListProduct] [int] NOT NULL,
+
+CONSTRAINT [PK_DimProduct_2] PRIMARY KEY CLUSTERED 
 (
+	--ID ASC,
 	ProductKey ASC,
     CompanyKey ASC)
 )ON [PRIMARY]
+
+

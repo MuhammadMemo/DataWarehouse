@@ -64,7 +64,7 @@
     <Build Include="Tables\DimTime.sql" />
     <Build Include="Tables\FactSales.sql" />
     <Build Include="Tables\DimDate.sql" />
-    <Build Include="Tables\DimProduct.sql" />
+    <Build Include="Tables\DimProducts.sql" />
     <Build Include="Tables\DimBranche.sql" />
     <Build Include="Script\_CREATE _DATABASE [DataWarehouse].sql" />
     <None Include="Script\InsertValue.sql" />
@@ -115,6 +115,7 @@
     <Build Include="Tables\DimFixFinOffsetAccountType.sql" />
     <Build Include="Tables\DimBank.sql" />
     <Build Include="Tables\FactBank.sql" />
+    <Build Include="Tables\DimProduct.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataWarehouse.publish.xml" />
