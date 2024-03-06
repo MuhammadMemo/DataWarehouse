@@ -2,9 +2,9 @@
 (
 	        CompanyKey tinyint NOT NULL,
 			[ID] [bigint] NOT NULL,
-			ProductKey [int] NOT NULL,
+			ProductKey [int] NOT NULL IDENTITY (1,1),
 			[GROUPTYPE] [nvarchar](50) NOT NULL,
-			[CATEGORY] [nvarchar](100) NOT NULL,
+			[TOPCATEGORY] [nvarchar](150) NOT NULL,
 	        [GROUPNAME] [nvarchar](150) NOT NULL,
 		    [SUBCATEGORID] [int] NOT NULL,
 		    [SUBCATEGORNAME] [nvarchar](100) NOT NULL,
